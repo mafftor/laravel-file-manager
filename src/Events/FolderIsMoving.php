@@ -1,6 +1,6 @@
 <?php
 
-namespace UniSharp\LaravelFilemanager\Events;
+namespace Mafftor\LaravelFileManager\Events;
 
 class FolderIsMoving
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace UniSharp\LaravelFilemanager\Controllers;
+namespace Mafftor\LaravelFileManager\Controllers;
 
-use UniSharp\LaravelFilemanager\Events\ImageIsRenaming;
-use UniSharp\LaravelFilemanager\Events\ImageWasRenamed;
-use UniSharp\LaravelFilemanager\Events\FolderIsRenaming;
-use UniSharp\LaravelFilemanager\Events\FolderWasRenamed;
+use Mafftor\LaravelFileManager\Events\ImageIsRenaming;
+use Mafftor\LaravelFileManager\Events\ImageWasRenamed;
+use Mafftor\LaravelFileManager\Events\FolderIsRenaming;
+use Mafftor\LaravelFileManager\Events\FolderWasRenamed;
 
 class RenameController extends LfmController
 {

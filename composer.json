@@ -1,9 +1,12 @@
 {
-  "name": "unisharp/laravel-filemanager",
+  "name": "mafftor/laravel-file-manager",
   "description": "A file upload/editor intended for use with Laravel 5 to 6 and CKEditor / TinyMCE",
   "license": "MIT",
   "keywords": [
+    "mafftor",
     "filemanager",
+    "filesmanager",
+    "files-manager",
     "laravel",
     "ckeditor",
     "tinymce",
@@ -13,6 +16,10 @@
     "image"
   ],
   "authors": [
+    {
+      "name": "Yevhenii Miniailenko",
+      "email": "mafftor@gmail.com"
+    },
     {
       "name": "Trevor Sawler",
       "email": "trevor.sawler@gmail.com"
@@ -27,11 +34,11 @@
     "ext-exif": "*",
     "ext-fileinfo": "*",
     "intervention/image": "2.*",
-    "illuminate/config": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0",
-    "illuminate/filesystem": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0",
-    "illuminate/support": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0",
-    "illuminate/http": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0",
-    "illuminate/container": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0"
+    "illuminate/config": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || 6.* || ^7.0",
+    "illuminate/filesystem": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || 6.* || ^7.0",
+    "illuminate/support": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || 6.* || ^7.0",
+    "illuminate/http": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || 6.* || ^7.0",
+    "illuminate/container": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || 6.* || ^7.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.2",
@@ -44,7 +51,7 @@
   },
   "autoload": {
     "psr-4": {
-      "UniSharp\\LaravelFilemanager\\": "src/"
+      "Mafftor\\LaravelFileManager\\": "src/"
     }
   },
   "autoload-dev": {
@@ -55,7 +62,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "UniSharp\\LaravelFilemanager\\LaravelFilemanagerServiceProvider"
+        "Mafftor\\LaravelFileManager\\LaravelFileManagerServiceProvider"
       ],
       "aliases": {
       }

@@ -1,10 +1,10 @@
 <?php
 
-namespace UniSharp\LaravelFilemanager\Controllers;
+namespace Mafftor\LaravelFileManager\Controllers;
 
 use Intervention\Image\Facades\Image;
-use UniSharp\LaravelFilemanager\Events\ImageIsCropping;
-use UniSharp\LaravelFilemanager\Events\ImageWasCropped;
+use Mafftor\LaravelFileManager\Events\ImageIsCropping;
+use Mafftor\LaravelFileManager\Events\ImageWasCropped;
 
 class CropController extends LfmController
 {
@@ -15,7 +15,7 @@ class CropController extends LfmController
      */
     public function getCrop()
     {
-        return view('laravel-filemanager::crop')
+        return view('laravel-file-manager::crop')
             ->with([
                 'working_dir' => request('working_dir'),
                 'img' => $this->lfm->pretty(request('img'))

@@ -1,6 +1,6 @@
 <?php
 
-namespace UniSharp\LaravelFilemanager\Controllers;
+namespace Mafftor\LaravelFileManager\Controllers;
 
 class FolderController extends LfmController
 {
@@ -15,13 +15,13 @@ class FolderController extends LfmController
             return $this->helper->allowFolderType($type);
         });
 
-        return view('laravel-filemanager::tree')
+        return view('laravel-file-manager::tree')
             ->with([
                 'root_folders' => array_map(function ($type) use ($folder_types) {
                     $path = $this->lfm->dir($this->helper->getRootFolder($type));
 
                     return (object) [
-                        'name' => trans('laravel-filemanager::lfm.title-' . $type),
+                        'name' => trans('laravel-file-manager::lfm.title-' . $type),
                         'url' => $path->path('working_dir'),
                         'children' => $path->folders(),
                         'has_next' => ! ($type == end($folder_types)),

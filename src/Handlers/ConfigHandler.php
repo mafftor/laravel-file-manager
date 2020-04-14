@@ -1,6 +1,6 @@
 <?php
 
-namespace UniSharp\LaravelFilemanager\Handlers;
+namespace Mafftor\LaravelFileManager\Handlers;
 
 class ConfigHandler
 {
