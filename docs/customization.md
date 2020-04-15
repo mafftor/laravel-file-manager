@@ -4,8 +4,8 @@
     Create route group to wrap package routes.
 
     ```php
-    Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-        \UniSharp\LaravelFilemanager\Lfm::routes();
+    Route::group(['prefix' => 'laravel-file-manager', 'middleware' => ['web', 'auth']], function () {
+        \Mafftor\LaravelFileManager\Lfm::routes();
     });
     ```
 
@@ -35,7 +35,7 @@
     ```
 
 ## Views
-Copy views to `resources/views/vendor/unisharp/laravel-filemanager/` :
+Copy views to `resources/views/vendor/mafftor/laravel-file-manager/` :
 
 ```bash
 php artisan vendor:publish --tag=lfm_view
@@ -43,5 +43,5 @@ php artisan vendor:publish --tag=lfm_view
 
 ## Translations
 
-1. Copy `vendor/unisharp/laravel-filemanager/src/lang/en` to `/resources/lang/vendor/laravel-filemanager/<YOUR LANGUAGE>/lfm.php`.
+1. Copy `vendor/mafftor/laravel-file-manager/src/lang/en` to `/resources/lang/vendor/laravel-file-manager/<YOUR LANGUAGE>/lfm.php`.
 1. Edit the file as you please.

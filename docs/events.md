@@ -1,20 +1,20 @@
 ## List of events
- * UniSharp\LaravelFilemanager\Events\ImageIsUploading
- * UniSharp\LaravelFilemanager\Events\ImageWasUploaded
- * UniSharp\LaravelFilemanager\Events\ImageIsRenaming
- * UniSharp\LaravelFilemanager\Events\ImageWasRenamed
- * UniSharp\LaravelFilemanager\Events\ImageIsDeleting
- * UniSharp\LaravelFilemanager\Events\ImageWasDeleted
- * UniSharp\LaravelFilemanager\Events\FolderIsRenaming
- * UniSharp\LaravelFilemanager\Events\FolderWasRenamed
- * UniSharp\LaravelFilemanager\Events\ImageIsResizing
- * UniSharp\LaravelFilemanager\Events\ImageWasResized
- * UniSharp\LaravelFilemanager\Events\ImageIsCropping
- * UniSharp\LaravelFilemanager\Events\ImageWasCropped
+ * Mafftor\LaravelFileManager\Events\ImageIsUploading
+ * Mafftor\LaravelFileManager\Events\ImageWasUploaded
+ * Mafftor\LaravelFileManager\Events\ImageIsRenaming
+ * Mafftor\LaravelFileManager\Events\ImageWasRenamed
+ * Mafftor\LaravelFileManager\Events\ImageIsDeleting
+ * Mafftor\LaravelFileManager\Events\ImageWasDeleted
+ * Mafftor\LaravelFileManager\Events\FolderIsRenaming
+ * Mafftor\LaravelFileManager\Events\FolderWasRenamed
+ * Mafftor\LaravelFileManager\Events\ImageIsResizing
+ * Mafftor\LaravelFileManager\Events\ImageWasResized
+ * Mafftor\LaravelFileManager\Events\ImageIsCropping
+ * Mafftor\LaravelFileManager\Events\ImageWasCropped
 
 
 ## How to use
- * Sample code : [laravel-filemanager-demo-events](https://github.com/UniSharp/laravel-filemanager-demo-events)
+ * Sample code : [laravel-filemanager-demo-events](https://github.com/unisharp/laravel-filemanager-demo-events)
  * To use events you can add a listener to listen to the events.
 
     Snippet for `EventServiceProvider`

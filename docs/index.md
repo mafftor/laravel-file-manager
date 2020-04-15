@@ -1,8 +1,6 @@
-[![Latest Stable Version](https://poser.pugx.org/unisharp/laravel-filemanager/v/stable)](https://packagist.org/packages/unisharp/laravel-filemanager)
-[![Total Downloads](https://poser.pugx.org/unisharp/laravel-filemanager/downloads)](https://packagist.org/packages/unisharp/laravel-filemanager)
-[![License](https://poser.pugx.org/unisharp/laravel-filemanager/license)](https://packagist.org/packages/unisharp/laravel-filemanager)
-
-This is the document of v2 version, v1 document can be found here: [https://github.com/UniSharp/laravel-filemanager/tree/v1/docs](https://github.com/UniSharp/laravel-filemanager/tree/v1/docs)
+[![Latest Stable Version](https://poser.pugx.org/mafftor/laravel-file-manager/v/stable)](https://packagist.org/packages/mafftor/laravel-file-manager)
+[![Total Downloads](https://poser.pugx.org/mafftor/laravel-file-manager/downloads)](https://packagist.org/packages/mafftor/laravel-file-manager)
+[![License](https://poser.pugx.org/mafftor/laravel-file-manager/license)](https://packagist.org/packages/mafftor/laravel-file-manager)
 
 ## Features
  * CKEditor and TinyMCE integration

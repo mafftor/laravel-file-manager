@@ -10,7 +10,7 @@
 1. Run these lines
 
     ```bash
-    composer require unisharp/laravel-filemanager
+    composer require mafftor/laravel-file-manager
     php artisan vendor:publish --tag=lfm_config
     php artisan vendor:publish --tag=lfm_public
     php artisan storage:link
@@ -22,7 +22,7 @@
 1. Install package
 
     ```bash
-    composer require unisharp/laravel-filemanager
+    composer require mafftor/laravel-file-manager
     ```
 
 1. (optional) Edit `config/app.php` :
@@ -32,7 +32,7 @@
     Add service providers
 
     ```php
-    UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+    Mafftor\LaravelFileManager\LaravelFilemanagerServiceProvider::class,
     Intervention\Image\ImageServiceProvider::class,
     ```
 
@@ -70,10 +70,10 @@
 1. Edit `APP_URL` in `.env`.
 
 ## Installing alpha version
- * Run `composer require unisharp/laravel-filemanager:dev-master` to get the latest developer version.
+ * Run `composer require mafftor/laravel-file-manager:dev-master` to get the latest developer version.
 
 ## What's next
 
-1. Check the [integration document](http://unisharp.github.io/laravel-filemanager/integration) to see how to apply this package.
+1. Check the [integration document](https://github.com/mafftor/laravel-file-manager/blob/master/docs/integration.md) to see how to apply this package.
 
-1. Check the [config document](http://unisharp.github.io/laravel-filemanager/config) to discover the flexibility of this package.
+1. Check the [config document](https://github.com/mafftor/laravel-file-manager/blob/master/docs/config.md) to discover the flexibility of this package.

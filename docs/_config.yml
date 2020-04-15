@@ -3,9 +3,9 @@ theme: jekyll-theme-cayman
 # Setup
 title: Laravel File Manager
 description: It's like Dropbox for your Laravel app.
-google_analytics: UA-92410814-4
+google_analytics:
 
 # About/contact
 author:
-  name: UniSharp
-  url: https://github.com/UniSharp
+  name: Mafftor
+  url: https://github.com/mafftor
