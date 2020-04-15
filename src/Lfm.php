@@ -72,7 +72,7 @@ class Lfm
      */
     public function currentLfmType()
     {
-        $lfm_type = 'file';
+        $lfm_type = $this->config->get('lfm.default_category_type', 'file');
 
         $request_type = lcfirst(Str::singular($this->input('type') ?: ''));
         $available_types = array_keys($this->config->get('lfm.folder_categories') ?: []);
