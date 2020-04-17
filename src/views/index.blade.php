@@ -46,19 +46,23 @@
     </a>
     <div class="collapse navbar-collapse flex-grow-0" id="nav-buttons">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" data-display="grid">
-            <i class="fas fa-th-large fa-fw"></i>
-            <span>{{ trans('laravel-file-manager::lfm.nav-thumbnails') }}</span>
+        <li class="nav-item dropdown dropdown-display-type">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-th-large fa-fw"></i> {{ trans('laravel-file-manager::lfm.nav-display-type') }}
           </a>
+          <div class="dropdown-menu dropdown-menu-right border-0">
+            <a class="dropdown-item" data-display="list">
+              <i class="fas fa-list-ul fa-fw"></i>
+              <span>{{ trans('laravel-file-manager::lfm.nav-list') }}</span>
+            </a>
+            <a class="dropdown-item" data-display="grid">
+              <i class="fas fa-th-large fa-fw"></i>
+              <span>{{ trans('laravel-file-manager::lfm.nav-thumbnails') }}</span>
+            </a>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" data-display="list">
-            <i class="fas fa-list-ul fa-fw"></i>
-            <span>{{ trans('laravel-file-manager::lfm.nav-list') }}</span>
-          </a>
-        </li>
-        <li class="nav-item dropdown">
+
+        <li class="nav-item dropdown dropdown-sort">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-sort fa-fw"></i>{{ trans('laravel-file-manager::lfm.nav-sort') }}
           </a>

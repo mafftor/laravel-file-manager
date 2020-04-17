@@ -60,7 +60,7 @@ $(document).ready(function () {
   });
 
   sortings.forEach(function (sort) {
-    $('#nav-buttons .dropdown-menu').append(
+    $('#nav-buttons .dropdown-sort .dropdown-menu').append(
       $('<a>').addClass('dropdown-item').attr('data-sortby', sort.by)
         .append($('<i>').addClass('fas fa-fw fa-' + sort.icon))
         .append($('<span>').text(sort.label))
@@ -317,12 +317,13 @@ function loadItems() {
       var response = JSON.parse(data);
       var working_dir = response.working_dir;
       items = response.items;
+      show_list = response.display;
       var hasItems = items.length !== 0;
       $('#empty').toggleClass('d-none', hasItems);
       $('#content').html('').removeAttr('class');
 
       if (hasItems) {
-        $('#content').addClass(response.display).addClass('preserve_actions_space');
+        $('#content').addClass(show_list).addClass('preserve_actions_space');
 
         items.forEach(function (item, index) {
           var template = $('#item-template').clone()
@@ -383,6 +384,11 @@ function loadItems() {
 
         $('#breadcrumbs > ol').append(li);
       });
+
+      // Set display type icon for menu
+      $('.dropdown-display-type').find('.nav-link i')
+          .toggleClass('fa-list-ul', show_list === 'list')
+          .toggleClass('fa-th-large', show_list === 'grid');
 
       var atRootFolder = getPreviousDir() == '';
       $('#to-previous').toggleClass('d-none invisible-lg', atRootFolder);
