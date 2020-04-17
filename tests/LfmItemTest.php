@@ -46,6 +46,15 @@ class LfmItemTest extends TestCase
         $this->assertEquals('bar', $item->name());
     }
 
+    public function testFileName()
+    {
+        $this->lfm_path->shouldReceive('getFileName')->andReturn('bar');
+
+        $item = new LfmItem($this->lfm_path, $this->lfm);
+
+        $this->assertEquals('bar', $item->fileName());
+    }
+
     public function testAbsolutePath()
     {
         $this->lfm_path->shouldReceive('path')->with('absolute')->andReturn('foo/bar.baz');

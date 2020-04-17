@@ -41,12 +41,13 @@ class Lfm
     /**
      * Get only the file name.
      *
-     * @param  string  $path  Real path of a file.
+     * @param string $path Real path of a file.
+     * @param int $options
      * @return string
      */
-    public function getNameFromPath($path)
+    public function getNameFromPath($path, $options = PATHINFO_BASENAME)
     {
-        return pathinfo($path, PATHINFO_BASENAME);
+        return pathinfo($path, $options);
     }
 
     public function allowFolderType($type)

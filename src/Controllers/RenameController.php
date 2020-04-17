@@ -28,15 +28,14 @@ class RenameController extends LfmController
 
         if (config('lfm.alphanumeric_directory') && preg_match('/[^\w-]/i', $new_name)) {
             return parent::error('folder-alnum');
-        // return parent::error('file-alnum');
         } elseif ($this->lfm->setName($new_name)->exists()) {
             return parent::error('rename');
         }
 
-        if (! $is_directory) {
+        if (!$is_directory) {
             $extension = $old_file->extension();
             if ($extension) {
-                $new_name = str_replace('.' . $extension, '', $new_name) . '.' . $extension;
+                $new_name .= '.' . $extension;
             }
         }
 

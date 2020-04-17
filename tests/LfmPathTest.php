@@ -72,6 +72,15 @@ class LfmPathTest extends TestCase
         $this->assertEquals('bar', $path->getName());
     }
 
+    public function testSetFileNameAndGetFileName()
+    {
+        $path = new LfmPath(m::mock(Lfm::class));
+
+        $path->setFileName('bar');
+
+        $this->assertEquals('bar', $path->getFileName());
+    }
+
     public function testPath()
     {
         $helper = m::mock(Lfm::class);

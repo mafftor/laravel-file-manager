@@ -407,7 +407,7 @@ function createFolder(folder_name) {
 // ==================================
 
 function rename(item) {
-  dialog(lang['message-rename'], item.name, function (new_name) {
+  dialog(lang['message-rename'], item.file_name, function (new_name) {
     performLfmRequest('rename', {
       file: item.name,
       new_name: new_name

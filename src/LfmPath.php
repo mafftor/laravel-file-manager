@@ -12,6 +12,7 @@ class LfmPath
 {
     private $working_dir;
     private $item_name;
+    private $item_file_name;
     private $is_thumb = false;
 
     private $helper;
@@ -57,6 +58,18 @@ class LfmPath
     public function getName()
     {
         return $this->item_name;
+    }
+
+    public function setFileName($item_file_name)
+    {
+        $this->item_file_name = $item_file_name;
+
+        return $this;
+    }
+
+    public function getFileName()
+    {
+        return $this->item_file_name;
     }
 
     public function path($type = 'storage')
@@ -118,7 +131,8 @@ class LfmPath
     public function pretty($item_path)
     {
         return Container::getInstance()->makeWith(LfmItem::class, [
-            'lfm' => (clone $this)->setName($this->helper->getNameFromPath($item_path)),
+            'lfm' => (clone $this)->setName($this->helper->getNameFromPath($item_path))
+                ->setFileName($this->helper->getNameFromPath($item_path, PATHINFO_FILENAME)),
             'helper' => $this->helper
         ]);
     }
@@ -135,8 +149,7 @@ class LfmPath
     /**
      * Create folder if not exist.
      *
-     * @param  string  $path  Real path of a directory.
-     * @return bool
+     * @return mixed
      */
     public function createFolder()
     {
@@ -162,7 +175,6 @@ class LfmPath
     /**
      * Check a folder and its subfolders is empty or not.
      *
-     * @param  string  $directory_path  Real path of a directory.
      * @return bool
      */
     public function directoryIsEmpty()
@@ -174,7 +186,7 @@ class LfmPath
     {
         $path = $this->working_dir
             ?: $this->helper->input('working_dir')
-            ?: $this->helper->getRootFolder();
+                ?: $this->helper->getRootFolder();
 
         if ($this->is_thumb) {
             // Prevent if working dir is "/" normalizeWorkingDir will add double "//" that breaks S3 functionality
@@ -192,7 +204,7 @@ class LfmPath
     /**
      * Sort files and directories.
      *
-     * @param  mixed  $arr_items  Array of files or folders or both.
+     * @param mixed $arr_items Array of files or folders or both.
      * @return array of object
      */
     public function sortByColumn($arr_items)
@@ -240,7 +252,7 @@ class LfmPath
     {
         if (empty($file)) {
             return $this->error('file-empty');
-        } elseif (! $file instanceof UploadedFile) {
+        } elseif (!$file instanceof UploadedFile) {
             return $this->error('instance');
         } elseif ($file->getError() == UPLOAD_ERR_INI_SIZE) {
             return $this->error('file-size', ['max' => ini_get('upload_max_filesize')]);

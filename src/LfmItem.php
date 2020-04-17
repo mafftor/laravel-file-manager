@@ -10,7 +10,7 @@ class LfmItem
     private $lfm;
     private $helper;
 
-    private $columns = ['name', 'url', 'time', 'icon', 'is_file', 'is_image', 'thumb_url'];
+    private $columns = ['name', 'file_name', 'url', 'time', 'icon', 'is_file', 'is_image', 'thumb_url'];
     public $attributes = [];
 
     public function __construct(LfmPath $lfm, Lfm $helper)
@@ -43,6 +43,11 @@ class LfmItem
         return $this->lfm->getName();
     }
 
+    public function fileName()
+    {
+        return $this->lfm->getFileName();
+    }
+
     public function path($type = 'absolute')
     {
         return $this->lfm->path($type);
@@ -55,14 +60,13 @@ class LfmItem
 
     public function isFile()
     {
-        return ! $this->isDirectory();
+        return !$this->isDirectory();
     }
 
     /**
      * Check a file is image or not.
      *
-     * @param  mixed  $file  Real path of a file or instance of UploadedFile.
-     * @return bool
+     * @return mixed
      */
     public function isImage()
     {
@@ -76,7 +80,6 @@ class LfmItem
     /**
      * Get mime type of a file.
      *
-     * @param  mixed  $file  Real path of a file or instance of UploadedFile.
      * @return string
      */
     // TODO: uploaded file
@@ -194,8 +197,8 @@ class LfmItem
     /**
      * Make file size readable.
      *
-     * @param  int  $bytes     File size in bytes.
-     * @param  int  $decimals  Decimals.
+     * @param int $bytes File size in bytes.
+     * @param int $decimals Decimals.
      * @return string
      */
     public function humanFilesize($bytes, $decimals = 2)
