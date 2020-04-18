@@ -19,6 +19,7 @@ return [
     'menu-crop'         => 'Обрізати',
     'menu-move'         => 'Перемістити',
     'menu-multiple'     => 'Multi-виділення',
+    'menu-search'       => 'Пошук',
 
     'title-page'        => 'Менеджер файлів',
     'title-panel'       => 'Laravel FileManager',

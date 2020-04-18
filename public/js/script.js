@@ -4,6 +4,8 @@ var sort_type = 'alphabetic';
 var multi_selection_enabled = false;
 var selected = [];
 var items = [];
+var search = '';
+var cache = {};
 
 $.fn.fab = function (options) {
   var menu = this;
@@ -106,6 +108,10 @@ $('#multi_selection_toggle').click(function () {
   if (!multi_selection_enabled) {
     clearSelected();
   }
+
+  if ($('#main').hasClass('overlay')) {
+    toggleMobileSearch(false);
+  }
 });
 
 $('#to-previous').click(function () {
@@ -123,11 +129,17 @@ function toggleMobileTree(should_display) {
 
 $('#show_tree').click(function (e) {
   toggleMobileTree();
+  if ($('#main').hasClass('overlay')) {
+    toggleMobileSearch(false);
+  }
 });
 
 $('#main').click(function (e) {
   if ($('#tree').hasClass('in')) {
     toggleMobileTree(false);
+  }
+  if ($(this).hasClass('overlay')) {
+    toggleMobileSearch(false);
   }
 });
 
@@ -231,6 +243,8 @@ $(document).on('click', '#tree a', function (e) {
 });
 
 function goTo(new_dir) {
+  search = '';
+  $("#search").val(search);
   $('#working_dir').val(new_dir);
   loadItems();
 }
@@ -299,7 +313,7 @@ var hideNavAndShowEditor = function (data) {
   $('#nav-buttons > ul').addClass('d-none');
   $('#content').html(data).removeClass('preserve_actions_space');
   clearSelected();
-}
+};
 
 function loadFolders() {
   performLfmRequest('folders', {}, 'html')
@@ -311,7 +325,7 @@ function loadFolders() {
 
 function loadItems() {
   loading(true);
-  performLfmRequest('jsonitems', {show_list: show_list, sort_type: sort_type}, 'html')
+  performLfmRequest('jsonitems', {show_list: show_list, sort_type: sort_type, search: search}, 'html')
     .done(function (data) {
       selected = [];
       var response = JSON.parse(data);
@@ -690,3 +704,90 @@ function dialog(title, value, callback) {
   });
   $('#dialog').modal('show').find('.modal-title').text(title);
 }
+
+$("#search").bind('keydown.autocomplete', function (event) {
+  if (event.keyCode === 13) {
+    event.stopImmediatePropagation();
+    $(this).autocomplete('close');
+    search = $(this).val();
+    loadItems();
+    toggleMobileSearch();
+    return false;
+  }
+}).focus(function () {
+  $(this).keydown();
+}).autocomplete({
+  minLength: 2,
+  source: function (request, response) {
+    // Check cache and load if exists
+    search = request.term;
+    if (search in cache) {
+      response(cache[search]);
+      return;
+    }
+
+    // Load items and store into cache
+    performLfmRequest('jsonitems', {show_list: show_list, sort_type: sort_type, search: search}, 'html')
+        .done(function (data) {
+          var res = JSON.parse(data);
+          var items = $.map(res.items, function (o) {
+            return o["name"];
+          });
+
+          cache[search] = items;
+          response(items);
+        });
+  },
+  select: function (event, ui) {
+    search = ui.item.value;
+    $(this).val(search);
+    loadItems();
+    toggleMobileSearch();
+    return false;
+  }
+});
+
+/**
+ * Open and close search in mobile screen
+ * */
+function toggleMobileSearch(should_display) {
+  if (should_display === undefined) {
+    should_display = !$('.navbar-search').hasClass('opened');
+  }
+
+  // Ony tablet and mobile
+  if ($(window).width() <= 991) {
+    // Calculate and display in the right way
+    if (should_display) {
+      $('#search').css({
+        top: $('#nav').outerHeight()
+      });
+      $('.ui-autocomplete').css({
+        'max-height': 'calc(100% - ' + (parseInt($('#nav').outerHeight()) + parseInt($('#search').outerHeight())) + 'px)'
+      });
+    }
+
+    $('.navbar-search').toggleClass('opened', should_display);
+    $('#main').toggleClass('overlay', should_display);
+    $('body').toggleClass('ovh', should_display);
+    if ($('.navbar-search').hasClass('opened')) {
+      $('#search').focus();
+    }
+  }
+}
+
+$('.mobile-search').click(function (e) {
+  e.preventDefault();
+  if ($('#tree').hasClass('in')) {
+    toggleMobileTree(false);
+  }
+  toggleMobileSearch();
+});
+
+// Close search if opened
+$('a[data-target="#nav-buttons"]').click(function (e) {
+  e.preventDefault();
+  if ($('#main').hasClass('overlay')) {
+    toggleMobileSearch(false);
+  }
+});

@@ -380,3 +380,151 @@ time {
   white-space: nowrap;
   content: attr(data-label);
 }
+
+.navbar-search {
+  position: relative;
+}
+
+.navbar-search:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f002";
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  z-index: 1;
+}
+
+.navbar-search input {
+  width: 150px;
+  transition: width .2s ease, opacity .2s ease;
+  opacity: .8;
+}
+
+.navbar-search input:hover,
+.navbar-search input:active,
+.navbar-search input:focus {
+  width: 300px;
+  opacity: 1;
+}
+
+.navbar-search .mobile-search {
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-search {
+    position: initial;
+  }
+
+  .navbar-search:before {
+    content: "";
+  }
+
+  .navbar-search input {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .navbar-search input:hover,
+  .navbar-search input:active,
+  .navbar-search input:focus {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .navbar-search .mobile-search {
+    display: block;
+  }
+
+  .navbar-search.opened input {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #main:before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.54);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease;
+  }
+
+  #main.overlay:before {
+    content: '';
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.ui-autocomplete {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  z-index: 1050;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+
+@media screen and (max-width: 991px) {
+  .ui-autocomplete {
+    max-height: calc(100% - 94px);
+  }
+}
+
+.ui-autocomplete > li > div {
+  display: block;
+  padding: 5px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
+}
+
+.ui-menu .ui-menu-item {
+  padding: 0;
+}
+
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  color: #262626;
+  background: #f5f5f5;
+  cursor: pointer;
+  border: none;
+}
+
+.ui-menu .ui-state-focus,
+.ui-menu .ui-state-active {
+  margin: 0;
+}
+
+.ovh {
+  overflow: hidden;
+}

@@ -108,9 +108,14 @@ class LfmPath
 
     public function folders()
     {
+        $all_folders = $this->storage->directories();
+        if ($this->helper->input('search')) {
+            $all_folders = preg_grep('/' . preg_quote($this->helper->input('search'), '/') . '[^\/]*$/iu', $all_folders);
+        }
+
         $all_folders = array_map(function ($directory_path) {
             return $this->pretty($directory_path);
-        }, $this->storage->directories());
+        }, $all_folders);
 
         $folders = array_filter($all_folders, function ($directory) {
             return $directory->name !== $this->helper->getThumbFolderName();
@@ -121,9 +126,14 @@ class LfmPath
 
     public function files()
     {
+        $files = $this->storage->files();
+        if ($this->helper->input('search')) {
+            $files = preg_grep('/' . preg_quote($this->helper->input('search'), '/') . '[^\/]*$/iu', $files);
+        }
+
         $files = array_map(function ($file_path) {
             return $this->pretty($file_path);
-        }, $this->storage->files());
+        }, $files);
 
         return $this->sortByColumn($files);
     }

@@ -35,7 +35,12 @@
     </a>
     <a class="navbar-brand d-block d-lg-none" id="current_folder"></a>
     <a id="loading" class="navbar-brand"><i class="fas fa-spinner fa-spin"></i></a>
-    <div class="ml-auto px-2">
+    <div class="navbar-search ml-auto">
+      <a href="#" class="mobile-search"><i class="fa fa-search"></i></a>
+      <input type="search" id="search" class="form-control autocomplete"
+             placeholder="{{ trans('laravel-file-manager::lfm.menu-search') }}">
+    </div>
+    <div class="px-2">
       <a class="navbar-link d-none" id="multi_selection_toggle">
         <i class="fa fa-check-double fa-fw"></i>
         <span class="d-none d-lg-inline">{{ trans('laravel-file-manager::lfm.menu-multiple') }}</span>

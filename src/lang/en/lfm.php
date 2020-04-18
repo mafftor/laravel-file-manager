@@ -19,6 +19,7 @@ return [
     'menu-crop'         => 'Crop',
     'menu-move'         => 'Move',
     'menu-multiple'     => 'Multi-selection',
+    'menu-search'       => 'Search',
 
     'title-page'        => 'File Manager',
     'title-panel'       => 'Laravel FileManager',
