@@ -1,10 +1,11 @@
 {
   "name": "mafftor/laravel-file-manager",
-  "description": "A file upload/editor intended for use with Laravel 5 to 6 and CKEditor / TinyMCE",
+  "description": "The file manager intended for using Laravel with CKEditor / TinyMCE / Colorbox",
   "license": "MIT",
   "keywords": [
     "mafftor",
     "filemanager",
+    "file-manager",
     "filesmanager",
     "files-manager",
     "laravel",
@@ -30,15 +31,15 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0",
+    "php": ">=7",
     "ext-exif": "*",
     "ext-fileinfo": "*",
     "intervention/image": "2.*",
-    "illuminate/config": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || 6.* || ^7.0",
-    "illuminate/filesystem": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || 6.* || ^7.0",
-    "illuminate/support": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || 6.* || ^7.0",
-    "illuminate/http": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || 6.* || ^7.0",
-    "illuminate/container": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || 6.* || ^7.0"
+    "illuminate/config": "^5.5|^6|^7",
+    "illuminate/filesystem": "^5.5|^6|^7",
+    "illuminate/support": "^5.5|^6|^7",
+    "illuminate/http": "^5.5|^6|^7",
+    "illuminate/container": "^5.5|^6|^7"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.2",
