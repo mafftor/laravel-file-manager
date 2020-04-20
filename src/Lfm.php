@@ -2,6 +2,7 @@
 
 namespace Mafftor\LaravelFileManager;
 
+use Exception;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -172,7 +173,7 @@ class Lfm
      */
     public function allowShareFolder()
     {
-        if (! $this->allowMultiUser()) {
+        if (!$this->allowMultiUser()) {
             return true;
         }
 
@@ -182,7 +183,7 @@ class Lfm
     /**
      * Translate file name to make it compatible on Windows.
      *
-     * @param  string  $input  Any string.
+     * @param string $input Any string.
      * @return string
      */
     public function translateFromUtf8($input)
@@ -222,13 +223,14 @@ class Lfm
     /**
      * Shorter function of getting localized error message..
      *
-     * @param  mixed  $error_type  Key of message in lang file.
-     * @param  mixed  $variables   Variables the message needs.
+     * @param mixed $error_type Key of message in lang file.
+     * @param mixed $variables Variables the message needs.
      * @return string
+     * @throws Exception
      */
     public function error($error_type, $variables = [])
     {
-        throw new \Exception(trans(self::PACKAGE_NAME . '::lfm.error-' . $error_type, $variables));
+        throw new Exception(trans(self::PACKAGE_NAME . '::lfm.error-' . $error_type, $variables));
     }
 
     /**
@@ -238,7 +240,7 @@ class Lfm
      */
     public static function routes()
     {
-        $middleware = [ CreateDefaultFolder::class, MultiUser::class ];
+        $middleware = [CreateDefaultFolder::class, MultiUser::class];
         $as = 'mafftor.lfm.';
         $namespace = '\\Mafftor\\LaravelFileManager\\Controllers\\';
 
@@ -268,15 +270,17 @@ class Lfm
                 'as' => 'getItems',
             ]);
 
-            Route::get('/move', [
-                'uses' => 'ItemsController@move',
-                'as' => 'move',
-            ]);
+            if (config('lfm.features.move', true)) {
+                Route::get('/move', [
+                    'uses' => 'ItemsController@move',
+                    'as' => 'move',
+                ]);
 
-            Route::get('/domove', [
-                'uses' => 'ItemsController@domove',
-                'as' => 'domove'
-            ]);
+                Route::get('/domove', [
+                    'uses' => 'ItemsController@domove',
+                    'as' => 'domove'
+                ]);
+            }
 
             // folders
             Route::get('/newfolder', [

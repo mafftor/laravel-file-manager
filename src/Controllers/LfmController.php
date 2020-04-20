@@ -35,8 +35,56 @@ class LfmController extends Controller
      */
     public function show()
     {
+        $actions = [
+            [
+                'name' => 'rename',
+                'icon' => 'edit',
+                'label' => trans('laravel-file-manager::lfm.menu-rename'),
+                'multiple' => false,
+            ],
+            [
+                'name' => 'download',
+                'icon' => 'download',
+                'label' => trans('laravel-file-manager::lfm.menu-download'),
+                'multiple' => true
+            ],
+        ];
+
+        if (config('lfm.features.move', true)) {
+            $actions = array_merge($actions, [
+                [
+                    'name' => 'move',
+                    'icon' => 'paste',
+                    'label' => trans('laravel-file-manager::lfm.menu-move'),
+                    'multiple' => true
+                ],
+            ]);
+        }
+
+        $actions = array_merge($actions, [
+            [
+                'name' => 'resize',
+                'icon' => 'arrows-alt',
+                'label' => trans('laravel-file-manager::lfm.menu-resize'),
+                'multiple' => false
+            ],
+            [
+                'name' => 'crop',
+                'icon' => 'crop',
+                'label' => trans('laravel-file-manager::lfm.menu-crop'),
+                'multiple' => false
+            ],
+            [
+                'name' => 'trash',
+                'icon' => 'trash',
+                'label' => trans('laravel-file-manager::lfm.menu-delete'),
+                'multiple' => true
+            ],
+        ]);
+
         return view('laravel-file-manager::index')
-            ->withHelper($this->helper);
+            ->withHelper($this->helper)
+            ->withActions($actions);
     }
 
     /**
@@ -48,15 +96,15 @@ class LfmController extends Controller
     {
         $arr_errors = [];
 
-        if (! extension_loaded('gd') && ! extension_loaded('imagick')) {
+        if (!extension_loaded('gd') && !extension_loaded('imagick')) {
             array_push($arr_errors, trans('laravel-file-manager::lfm.message-extension_not_found'));
         }
 
-        if (! extension_loaded('exif')) {
+        if (!extension_loaded('exif')) {
             array_push($arr_errors, 'EXIF extension not found.');
         }
 
-        if (! extension_loaded('fileinfo')) {
+        if (!extension_loaded('fileinfo')) {
             array_push($arr_errors, 'Fileinfo extension not found.');
         }
 
@@ -64,13 +112,18 @@ class LfmController extends Controller
             . $this->helper->currentLfmType()
             . '.valid_mime';
 
-        if (! is_array(config($mine_config_key))) {
+        if (!is_array(config($mine_config_key))) {
             array_push($arr_errors, 'Config : ' . $mine_config_key . ' is not a valid array.');
         }
 
         return $arr_errors;
     }
 
+    /**
+     * @param $error_type
+     * @param array $variables
+     * @return mixed
+     */
     public function error($error_type, $variables = [])
     {
         return $this->helper->error($error_type, $variables);
