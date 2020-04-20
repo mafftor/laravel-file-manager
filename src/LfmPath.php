@@ -302,7 +302,7 @@ class LfmPath
         if (config('lfm.rename_file') === true) {
             $new_file_name = uniqid();
         } elseif (config('lfm.alphanumeric_filename') === true) {
-            $new_file_name = preg_replace('/[^A-Za-z0-9\-\']/', '_', $new_file_name);
+            $new_file_name = preg_replace('/[^\w-]/i', '_', $new_file_name);
         }
 
         $extension = $file->getClientOriginalExtension();

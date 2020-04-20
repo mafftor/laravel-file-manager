@@ -103,19 +103,23 @@ return [
     |--------------------------------------------------------------------------
     | Upload / Validation
     |--------------------------------------------------------------------------
-     */
+    |
+    | We highly recommend you to leave alphanumeric setting by default (true)
+    | It may save you from problems in the future
+    |
+    */
 
     'disk' => 'public',
 
     'rename_file' => false,
 
-    'alphanumeric_filename' => false,
+    'alphanumeric_filename' => true,
 
-    'alphanumeric_directory' => false,
+    'alphanumeric_directory' => true,
 
-    'should_validate_size' => false,
+    'should_validate_size' => true,
 
-    'should_validate_mime' => false,
+    'should_validate_mime' => true,
 
     // behavior on files with identical name
     // setting it to true cause old file replace with new one
