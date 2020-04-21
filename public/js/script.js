@@ -1,11 +1,21 @@
 var lfm_route = location.origin + location.pathname;
 var show_list;
 var sort_type = 'alphabetic';
-var multi_selection_enabled = false;
-var selected = [];
 var items = [];
 var search = '';
 var cache = {};
+
+const selectable = new Selectable({
+  appendTo: '#content',
+  lasso: {
+    border: '1px solid #fff',
+    backgroundColor: 'rgba(36,124,255,0.17)',
+  }
+});
+
+selectable.on("end", function() {
+  toggleActions();
+});
 
 $.fn.fab = function (options) {
   var menu = this;
@@ -88,31 +98,11 @@ $(document).ready(function () {
   $(window).on('dragenter', function(){
     $('#uploadModal').modal('show');
   });
-
-  if (usingWysiwygEditor()) {
-    $('#multi_selection_toggle').hide();
-  }
 });
 
 // ======================
 // ==  Navbar actions  ==
 // ======================
-
-$('#multi_selection_toggle').click(function () {
-  multi_selection_enabled = !multi_selection_enabled;
-
-  $('#multi_selection_toggle i')
-    .toggleClass('fa-times', multi_selection_enabled)
-    .toggleClass('fa-check-double', !multi_selection_enabled);
-
-  if (!multi_selection_enabled) {
-    clearSelected();
-  }
-
-  if ($('#main').hasClass('overlay')) {
-    toggleMobileSearch(false);
-  }
-});
 
 $('#to-previous').click(function () {
   var previous_dir = getPreviousDir();
@@ -134,7 +124,7 @@ $('#show_tree').click(function (e) {
   }
 });
 
-$('#main').click(function (e) {
+$('#main').click(function () {
   if ($('#tree').hasClass('in')) {
     toggleMobileTree(false);
   }
@@ -157,61 +147,23 @@ $(document).on('click', '[data-display]', function() {
 });
 
 $(document).on('click', '[data-action]', function() {
-  window[$(this).data('action')]($(this).data('multiple') ? getSelectedItems() : getOneSelectedElement());
+  window[$(this).data('action')]($(this).data('multiple') ? getSelectedItems() : getSelectedItems()[0]);
 });
 
 // ==========================
 // ==  Multiple Selection  ==
 // ==========================
 
-function toggleSelected (e) {
-  if (!multi_selection_enabled) {
-    selected = [];
-  }
-
-  var sequence = $(e.target).closest('a').data('id');
-  var element_index = selected.indexOf(sequence);
-  if (element_index === -1) {
-    selected.push(sequence);
-  } else {
-    selected.splice(element_index, 1);
-  }
-
-  updateSelectedStyle();
-}
-
-function clearSelected () {
-  selected = [];
-
-  multi_selection_enabled = false;
-
-  updateSelectedStyle();
-}
-
-function updateSelectedStyle() {
-  items.forEach(function (item, index) {
-    $('[data-id=' + index + ']')
-      .find('.square')
-      .toggleClass('selected', selected.indexOf(index) > -1);
-  });
-  toggleActions();
-}
-
-function getOneSelectedElement(orderOfItem) {
-  var index = orderOfItem !== undefined ? orderOfItem : selected[0];
-  return items[index];
-}
-
 function getSelectedItems() {
-  return selected.reduce(function (arr_objects, id) {
-    arr_objects.push(getOneSelectedElement(id));
-    return arr_objects
-  }, []);
+  return selectable.getSelectedNodes().map(function (item) {
+    return $(item).data('item')
+  })
 }
 
 function toggleActions() {
-  var one_selected = selected.length === 1;
-  var many_selected = selected.length >= 1;
+  var one_selected = getSelectedItems().length === 1;
+  var many_selected = getSelectedItems().length >= 1;
+
   var only_image = getSelectedItems()
     .filter(function (item) { return !item.is_image; })
     .length === 0;
@@ -223,14 +175,13 @@ function toggleActions() {
   $('[data-action=rename]').toggleClass('d-none', !one_selected);
   $('[data-action=preview]').toggleClass('d-none', !(many_selected && only_file));
   $('[data-action=move]').toggleClass('d-none', !many_selected);
-  $('[data-action=download]').toggleClass('d-none', !(many_selected && only_file));
+  $('[data-action=download]').toggleClass('d-none', !(one_selected && only_file));
   $('[data-action=resize]').toggleClass('d-none', !(one_selected && only_image));
   $('[data-action=crop]').toggleClass('d-none', !(one_selected && only_image));
   $('[data-action=trash]').toggleClass('d-none', !many_selected);
   $('[data-action=open]').toggleClass('d-none', !one_selected || only_file);
-  $('#multi_selection_toggle').toggleClass('d-none', usingWysiwygEditor() || !many_selected);
-  $('#actions').toggleClass('d-none', selected.length === 0);
-  $('#fab').toggleClass('d-none', selected.length !== 0);
+  $('#actions').toggleClass('d-none', getSelectedItems().length === 0);
+  $('#fab').toggleClass('d-none', getSelectedItems().length !== 0);
 }
 
 // ======================
@@ -238,6 +189,7 @@ function toggleActions() {
 // ======================
 
 $(document).on('click', '#tree a', function (e) {
+  e.preventDefault();
   goTo($(e.target).closest('a').data('path'));
   toggleMobileTree(false);
 });
@@ -312,7 +264,6 @@ var refreshFoldersAndItems = function (data) {
 var hideNavAndShowEditor = function (data) {
   $('#nav-buttons > ul').addClass('d-none');
   $('#content').html(data).removeClass('preserve_actions_space');
-  clearSelected();
 };
 
 function loadFolders() {
@@ -327,7 +278,6 @@ function loadItems() {
   loading(true);
   performLfmRequest('jsonitems', {show_list: show_list, sort_type: sort_type, search: search}, 'html')
     .done(function (data) {
-      selected = [];
       var response = JSON.parse(data);
       var working_dir = response.working_dir;
       items = response.items;
@@ -343,7 +293,7 @@ function loadItems() {
           var template = $('#item-template').clone()
             .removeAttr('id class')
             .attr('data-id', index)
-            .click(toggleSelected)
+            .data('item', item)
             .dblclick(function (e) {
               if (item.is_file) {
                 use(getSelectedItems());
@@ -365,6 +315,8 @@ function loadItems() {
 
           $('#content').append(template);
         });
+
+        selectable.add(document.getElementById('content').children);
       }
 
       $('#nav-buttons > ul').removeClass('d-none');
@@ -453,21 +405,17 @@ function resize(item) {
     .done(hideNavAndShowEditor);
 }
 
-function download(items) {
-  items.forEach(function (item, index) {
-    var data = defaultParameters();
+function download(item) {
+  var data = defaultParameters();
 
-    data['file'] = item.name;
+  data['file'] = item.name;
 
-    var token = getUrlParam('token');
-    if (token) {
-      data['token'] = token;
-    }
+  var token = getUrlParam('token');
+  if (token) {
+    data['token'] = token;
+  }
 
-    setTimeout(function () {
-      location.href = lfm_route + '/download?' + $.param(data);
-    }, index * 100);
-  });
+  location.href = lfm_route + '/download?' + $.param(data);
 }
 
 function open(item) {
@@ -626,7 +574,7 @@ function use(items) {
   } else if (callback && window[callback]) {
     window[callback](getSelectedItems());
   } else if (callback && parent[callback]) {
-    parent[callback](getSelecteditems());
+    parent[callback](getSelectedItems());
   } else if (window.opener) { // standalone button or other situations
     window.opener.SetUrl(getSelectedItems());
   } else {

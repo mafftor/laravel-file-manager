@@ -46,7 +46,7 @@ class LfmController extends Controller
                 'name' => 'download',
                 'icon' => 'download',
                 'label' => trans('laravel-file-manager::lfm.menu-download'),
-                'multiple' => true
+                'multiple' => false
             ],
         ];
 

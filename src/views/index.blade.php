@@ -35,16 +35,10 @@
     </a>
     <a class="navbar-brand d-block d-lg-none" id="current_folder"></a>
     <a id="loading" class="navbar-brand"><i class="fas fa-spinner fa-spin"></i></a>
-    <div class="navbar-search ml-auto">
+    <div class="navbar-search ml-auto mr-2">
       <a href="#" class="mobile-search"><i class="fa fa-search"></i></a>
       <input type="search" id="search" class="form-control autocomplete"
              placeholder="{{ trans('laravel-file-manager::lfm.menu-search') }}">
-    </div>
-    <div class="px-2">
-      <a class="navbar-link d-none" id="multi_selection_toggle">
-        <i class="fa fa-check-double fa-fw"></i>
-        <span class="d-none d-lg-inline">{{ trans('laravel-file-manager::lfm.menu-multiple') }}</span>
-      </a>
     </div>
     <a class="navbar-toggler collapsed border-0 px-1 py-2 m-0" data-toggle="collapse" data-target="#nav-buttons">
       <i class="fas fa-cog fa-fw"></i>
@@ -102,14 +96,14 @@
 
       <div id="content"></div>
 
-      <a id="item-template" class="d-none">
+      <div id="item-template" class="d-none">
         <div class="square"></div>
 
         <div class="info">
           <div class="item_name text-truncate"></div>
           <time class="text-muted font-weight-light text-truncate"></time>
         </div>
-      </a>
+      </div>
     </div>
 
     <div id="fab"></div>
@@ -202,6 +196,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="{{ asset('vendor/laravel-file-manager/js/cropper.min.js') }}"></script>
   <script src="{{ asset('vendor/laravel-file-manager/js/dropzone.min.js') }}"></script>
+  <script src="{{ asset('vendor/laravel-file-manager/js/selectable.min.js') }}"></script>
   <script>
     var lang = {!! json_encode(trans('laravel-file-manager::lfm')) !!};
     var actions = @json($actions);
