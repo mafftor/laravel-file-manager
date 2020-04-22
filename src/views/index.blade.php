@@ -101,7 +101,17 @@
 
         <div class="info">
           <div class="item_name text-truncate"></div>
-          <time class="text-muted font-weight-light text-truncate"></time>
+          <div>
+            <span class="item_size text-muted text-truncate badge badge-light">
+              <i class="fa fa-hdd"></i> <span></span>
+            </span>
+            <span class="item_dimensions text-muted text-truncate badge badge-light">
+              <i class="fas fa-ruler-combined"></i> <span></span>
+            </span>
+            <time class="text-muted text-truncate badge badge-light">
+              <i class="fa fa-clock"></i> <span></span>
+            </time>
+          </div>
         </div>
       </div>
     </div>

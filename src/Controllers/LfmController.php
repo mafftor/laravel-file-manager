@@ -64,7 +64,7 @@ class LfmController extends Controller
         $actions = array_merge($actions, [
             [
                 'name' => 'resize',
-                'icon' => 'arrows-alt',
+                'icon' => 'ruler-combined',
                 'label' => trans('laravel-file-manager::lfm.menu-resize'),
                 'multiple' => false
             ],

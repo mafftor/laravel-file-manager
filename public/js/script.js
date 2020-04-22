@@ -284,7 +284,7 @@ function loadItems() {
       show_list = response.display;
       var hasItems = items.length !== 0;
       $('#empty').toggleClass('d-none', hasItems);
-      $('#content').html('').removeAttr('class');
+      $('#content').html('').removeAttr('class').toggleClass('d-none', !hasItems);
 
       if (hasItems) {
         $('#content').addClass(show_list).addClass('preserve_actions_space');
@@ -309,9 +309,21 @@ function loadItems() {
             var image = $('<div>').addClass('mime-icon ico-' + item.icon).append(icon);
           }
 
+          if (item.is_file) {
+            template.find('.item_size span').text(item.size);
+          } else {
+            template.find('.item_size').remove();
+          }
+
+          if (item.dimensions) {
+            template.find('.item_dimensions span').text(item.dimensions);
+          } else {
+            template.find('.item_dimensions').remove();
+          }
+
           template.find('.square').append(image);
           template.find('.item_name').text(item.name);
-          template.find('time').text((new Date(item.time * 1000)).toLocaleString());
+          template.find('time span').text((new Date(item.time * 1000)).toLocaleString());
 
           $('#content').append(template);
         });

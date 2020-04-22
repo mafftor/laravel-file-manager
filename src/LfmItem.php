@@ -4,13 +4,14 @@ namespace Mafftor\LaravelFileManager;
 
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Intervention\Image\Facades\Image;
 
 class LfmItem
 {
     private $lfm;
     private $helper;
 
-    private $columns = ['name', 'file_name', 'url', 'time', 'icon', 'is_file', 'is_image', 'thumb_url'];
+    private $columns = ['name', 'file_name', 'url', 'size', 'time', 'dimensions', 'icon', 'is_file', 'is_image', 'thumb_url'];
     public $attributes = [];
 
     public function __construct(LfmPath $lfm, Lfm $helper)
@@ -78,6 +79,20 @@ class LfmItem
     }
 
     /**
+     * Check a file is svg or not.
+     *
+     * @return mixed
+     */
+    public function isSvg()
+    {
+        if ($this->isImage()) {
+            return Str::contains($this->mimeType(), 'svg');
+        }
+
+        return false;
+    }
+
+    /**
      * Get mime type of a file.
      *
      * @return string
@@ -118,6 +133,40 @@ class LfmItem
         }
 
         return false;
+    }
+
+    /**
+     * Get dimensions of the image
+     *
+     * @return bool|string
+     */
+    public function dimensions()
+    {
+        if ($this->isImage() && !$this->isSvg()) {
+            return $this->width() . 'x' . $this->height();
+        }
+
+        return false;
+    }
+
+    /**
+     * Get width of the image
+     *
+     * @return bool|int
+     */
+    public function width()
+    {
+        return $this->isImage() && !$this->isSvg() ? Image::make($this->path())->width() : false;
+    }
+
+    /**
+     * Get height of the image
+     *
+     * @return bool|int
+     */
+    public function height()
+    {
+        return $this->isImage() && !$this->isSvg() ? Image::make($this->path())->height() : false;
     }
 
     public function thumbUrl()
@@ -203,7 +252,7 @@ class LfmItem
      */
     public function humanFilesize($bytes, $decimals = 2)
     {
-        $size = ['B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+        $size = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
         $factor = floor((strlen($bytes) - 1) / 3);
 
         return sprintf("%.{$decimals}f %s", $bytes / pow(1024, $factor), @$size[$factor]);

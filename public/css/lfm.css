@@ -205,6 +205,7 @@ a {
 .grid {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   padding: .5rem;
 }
 
@@ -285,10 +286,23 @@ a {
   padding: 5px 0 5px;
 }
 
-time {
+.item_size {
+  padding-right: 5px;
   font-size: .8rem;
 }
 
+.item_dimensions {
+  padding-right: 5px;
+  font-size: .8rem;
+}
+
+time {
+  font-size: .8rem;
+  font-weight: 500 !important;
+}
+
+.grid .item_size,
+.grid .item_dimensions,
 .grid time {
   display: none;
 }
