@@ -18,7 +18,6 @@ return [
     'menu-resize'       => 'Змінити розмір',
     'menu-crop'         => 'Обрізати',
     'menu-move'         => 'Перемістити',
-    'menu-multiple'     => 'Multi-виділення',
     'menu-search'       => 'Пошук',
 
     'title-page'        => 'Менеджер файлів',

@@ -17,7 +17,6 @@ return [
     'menu-resize'       => 'تغییر اندازه',
     'menu-crop'         => 'برش',
     'menu-move'         => 'انتقال',
-    'menu-multiple'     => 'انتخاب چندتایی',
 
     'title-page'        => 'مدیریت فایل',
     'title-panel'       => 'مدیریت فایل لاراول',

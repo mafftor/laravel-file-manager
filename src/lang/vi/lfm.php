@@ -17,7 +17,6 @@ return [
     'menu-resize'       => 'Thay đổi kích thước',
     'menu-crop'         => 'Cắt',
     'menu-move'         => 'Di chuyển',
-    'menu-multiple'     => 'Chọn nhiều',
 
     'title-page'        => 'Quản lý tập tin',
     'title-panel'       => 'Trình quản lý tập tin Laravel',

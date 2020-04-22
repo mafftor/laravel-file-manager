@@ -17,7 +17,6 @@ return [
     'menu-resize'                 => 'Größe Ändern',
     'menu-crop'                   => 'Zuschneiden',
     'menu-move'                   => 'Verschieben',
-    'menu-multiple'               => 'Mehrfachauswahl',
 
     'title-page'                  => 'File Manager',
     'title-panel'                 => 'FileManager',

@@ -17,7 +17,6 @@ return [
     'menu-resize'       => '縮放',
     'menu-crop'         => '裁剪',
     'menu-move'         => '搬移',
-    'menu-multiple'     => '多選',
 
     'title-page'        => '檔案管理',
     'title-panel'       => '檔案管理',
