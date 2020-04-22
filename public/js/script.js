@@ -315,9 +315,9 @@ function loadItems() {
 
           $('#content').append(template);
         });
-
-        selectable.add(document.getElementById('content').children);
       }
+
+      selectable.add(document.getElementById('content').children);
 
       $('#nav-buttons > ul').removeClass('d-none');
 
