@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Voltar',
     'nav-new'           => 'Nova Pasta',
     'nav-upload'        => 'Upload',
-    'nav-thumbnails'    => 'Miniatura',
-    'nav-list'          => 'Lista',
 
     'menu-rename'       => 'Renomear',
     'menu-delete'       => 'Apagar',

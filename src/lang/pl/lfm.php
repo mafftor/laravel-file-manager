@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Powrót',
     'nav-new'           => 'Nowy Folder',
     'nav-upload'        => 'Wgraj plik',
-    'nav-thumbnails'    => 'Miniaturki',
-    'nav-list'          => 'Lista',
 
     'menu-rename'       => 'Zmień nazwę',
     'menu-delete'       => 'Usuń',

@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Επιστροφή',
     'nav-new'           => 'Νέος φάκελος',
     'nav-upload'        => 'Ανέβασμα',
-    'nav-thumbnails'    => 'Εικονίδια',
-    'nav-list'          => 'Λίστα',
 
     'menu-rename'       => 'Μετονομασία',
     'menu-delete'       => 'Διαγραφή',

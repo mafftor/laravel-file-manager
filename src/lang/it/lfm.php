@@ -5,8 +5,6 @@ return [
     'nav-back'          => 'Indietro',
     'nav-new'           => 'Nuova Cartella',
     'nav-upload'        => 'Carica',
-    'nav-thumbnails'    => 'Anteprima',
-    'nav-list'          => 'Elencare',
     'nav-sort'          => 'Ordinare',
     'nav-sort-alphabetic'=> 'Ordine Alfabetico',
     'nav-sort-time'     => 'Ordine Temporale',

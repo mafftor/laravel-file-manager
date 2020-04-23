@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Vissza',
     'nav-new'           => 'Új mappa',
     'nav-upload'        => 'Feltöltés',
-    'nav-thumbnails'    => 'Miniatűrök',
-    'nav-list'          => 'Lista',
     'nav-sort'          => 'Rendezés',
     'nav-sort-alphabetic'=> 'ABC szerint',
     'nav-sort-time'     => 'Idő szerint',

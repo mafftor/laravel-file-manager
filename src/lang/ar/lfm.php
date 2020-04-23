@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'الخلف',
     'nav-new'           => 'مجلد جديد',
     'nav-upload'        => 'رفع',
-    'nav-thumbnails'    => 'مصغرات',
-    'nav-list'          => 'قائمة',
 
     'menu-rename'       => 'إعادة تسمية',
     'menu-delete'       => 'حذف',

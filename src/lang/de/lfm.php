@@ -4,8 +4,6 @@ return [
     'nav-back'                    => 'Zurück',
     'nav-new'                     => 'Neuer Ordner',
     'nav-upload'                  => 'Hochladen',
-    'nav-thumbnails'              => 'Thumbnails',
-    'nav-list'                    => 'Liste',
     'nav-sort'                    => 'Sortierung',
     'nav-sort-alphabetic'         => 'Alphabetisch',
     'nav-sort-time'               => 'Datum',

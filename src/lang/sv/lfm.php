@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Tillbaka',
     'nav-new'           => 'Ny mapp',
     'nav-upload'        => 'Ladda up',
-    'nav-thumbnails'    => 'Miniatyrer',
-    'nav-list'          => 'Lista',
     'nav-sort'          => 'Sortera',
     'nav-sort-alphabetic'=> 'Sortera efter alfabetet',
     'nav-sort-time'     => 'Sortera efter tid',

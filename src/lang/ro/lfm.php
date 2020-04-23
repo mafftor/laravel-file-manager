@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Înapoi',
     'nav-new'           => 'Folder Nou',
     'nav-upload'        => 'Încarcă',
-    'nav-thumbnails'    => 'Miniatură',
-    'nav-list'          => 'Listă',
 
     'menu-rename'       => 'Redenumește',
     'menu-delete'       => 'Șterge',

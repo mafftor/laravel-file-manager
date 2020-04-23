@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Atzera',
     'nav-new'           => 'Karpeta berria',
     'nav-upload'        => 'Kargatu',
-    'nav-thumbnails'    => 'Koadro txikiak',
-    'nav-list'          => 'Zerrenda',
     'nav-sort'          => 'Ordenatu',
     'nav-sort-alphabetic'=> 'Ordenatu alfabetikoki',
     'nav-sort-time'     => 'Ordenatu denboraren arabera',

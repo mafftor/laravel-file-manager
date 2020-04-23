@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Voltar',
     'nav-new'           => 'Nova Pasta',
     'nav-upload'        => 'Enviar',
-    'nav-thumbnails'    => 'Miniatura',
-    'nav-list'          => 'Lista',
     'nav-sort'          => 'Ordenar',
     'nav-sort-alphabetic'=> 'Ordenar alfabeticamente',
     'nav-sort-time'     => 'Ordenar por data',

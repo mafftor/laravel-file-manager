@@ -42,6 +42,20 @@ a {
   font-size: 20px;
 }
 
+#breadcrumbs {
+  margin: 0 -15px 1rem;
+}
+
+@media screen and (max-width: 991px) {
+  #breadcrumbs {
+    margin: 1rem 0 1rem;
+  }
+}
+
+.breadcrumb {
+  margin: 0;
+}
+
 .breadcrumb-item:not(.active) {
   transition: .2s color;
 }
@@ -413,9 +427,21 @@ time {
 }
 
 .navbar-search input {
-  width: 150px;
+  width: 300px;
   transition: width .2s ease, opacity .2s ease;
-  opacity: .8;
+  opacity: .9;
+}
+
+@media screen and (max-width: 1399px) {
+  .navbar-search input {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1299px) {
+  .navbar-search input {
+    width: 150px;
+  }
 }
 
 .navbar-search input:hover,

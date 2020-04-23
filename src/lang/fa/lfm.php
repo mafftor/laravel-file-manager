@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'بازگشت',
     'nav-new'           => 'پوشه جدید',
     'nav-upload'        => 'آپلود',
-    'nav-thumbnails'    => 'تصویرک ها',
-    'nav-list'          => 'لیست',
     'nav-sort'          => 'مرتب سازی',
     'nav-sort-alphabetic'=> 'مرتب سازی الفبایی',
     'nav-sort-time'     => 'مرتب سازی زمانی',

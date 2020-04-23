@@ -35,7 +35,7 @@
     </a>
     <a class="navbar-brand d-block d-lg-none" id="current_folder"></a>
     <a id="loading" class="navbar-brand"><i class="fas fa-spinner fa-spin"></i></a>
-    <div class="navbar-search ml-auto mr-2">
+    <div class="navbar-search ml-auto ml-lg-3 ml-xl-5 mr-3 mr-lg-0 order-lg-1">
       <a href="#" class="mobile-search"><i class="fa fa-search"></i></a>
       <input type="search" id="search" class="form-control autocomplete"
              placeholder="{{ trans('laravel-file-manager::lfm.menu-search') }}">
@@ -43,31 +43,8 @@
     <a class="navbar-toggler collapsed border-0 px-1 py-2 m-0" data-toggle="collapse" data-target="#nav-buttons">
       <i class="fas fa-cog fa-fw"></i>
     </a>
-    <div class="collapse navbar-collapse flex-grow-0" id="nav-buttons">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown dropdown-display-type">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-th-large fa-fw"></i> {{ trans('laravel-file-manager::lfm.nav-display-type') }}
-          </a>
-          <div class="dropdown-menu dropdown-menu-right border-0">
-            <a class="dropdown-item" data-display="list">
-              <i class="fas fa-list-ul fa-fw"></i>
-              <span>{{ trans('laravel-file-manager::lfm.nav-list') }}</span>
-            </a>
-            <a class="dropdown-item" data-display="grid">
-              <i class="fas fa-th-large fa-fw"></i>
-              <span>{{ trans('laravel-file-manager::lfm.nav-thumbnails') }}</span>
-            </a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown dropdown-sort">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-sort fa-fw"></i>{{ trans('laravel-file-manager::lfm.nav-sort') }}
-          </a>
-          <div class="dropdown-menu dropdown-menu-right border-0"></div>
-        </li>
-      </ul>
+    <div class="collapse navbar-collapse flex-grow-0 ml-lg-auto" id="nav-buttons">
+      <ul class="navbar-nav"></ul>
     </div>
   </nav>
 
@@ -83,10 +60,35 @@
     <div id="main">
       <div id="alerts"></div>
 
-      <nav aria-label="breadcrumb" class="d-none d-lg-block" id="breadcrumbs">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item invisible">Home</li>
-        </ol>
+      <nav aria-label="breadcrumb" id="breadcrumbs">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-between">
+            <div class="col d-none d-lg-block">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item invisible">Home</li>
+              </ol>
+            </div>
+            <div class="col-auto">
+              <div class="dropdown dropdown-sort">
+                <button class="btn btn-light dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">
+                  <i class="fas fa-sort fa-fw"></i>{{ trans('laravel-file-manager::lfm.nav-sort') }}
+                </button>
+                <div class="dropdown-menu"></div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="btn-group mr-5 mr-lg-0">
+                <a class="btn btn-light" data-display="list">
+                  <i class="fas fa-list-ul fa-fw"></i>
+                </a>
+                <a class="btn btn-light" data-display="grid">
+                  <i class="fas fa-th-large fa-fw"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
 
       <div id="empty" class="d-none">

@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Atrás',
     'nav-new'           => 'Nueva Carpeta',
     'nav-upload'        => 'Subir',
-    'nav-thumbnails'    => 'Miniaturas',
-    'nav-list'          => 'Listado',
     'nav-sort'          => 'Ordenar',
     'nav-sort-alphabetic'=> 'Ordenar Alfabéticamente',
     'nav-sort-time'     => 'Ordenar por Fecha',

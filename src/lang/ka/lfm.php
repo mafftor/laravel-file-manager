@@ -4,8 +4,6 @@ return [
     'nav-back' => 'უკან',
     'nav-new' => 'ახალი საქაღალდე',
     'nav-upload' => 'ატვირთვა',
-    'nav-thumbnails' => 'ესკიზები',
-    'nav-list' => 'სია',
     'nav-sort' => 'სორტირება',
     'nav-sort-alphabetic' => 'სორტირება ანბანის მიხედვით',
     'nav-sort-time' => 'სორტირება დროის მიხედვით',

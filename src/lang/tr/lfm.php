@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Geri',
     'nav-new'           => 'Yeni Klasör',
     'nav-upload'        => 'Yükle',
-    'nav-thumbnails'    => 'Küçük Resim',
-    'nav-list'          => 'Liste',
     'nav-sort'          => 'Sırala',
     'nav-sort-alphabetic'=> 'A-Z Sırala',
     'nav-sort-time'     => 'Zamana Göre Sırala',

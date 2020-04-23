@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Назад',
     'nav-new'           => 'Нова Папка',
     'nav-upload'        => 'Качване',
-    'nav-thumbnails'    => 'Тъмб',
-    'nav-list'          => 'Списък',
 
     'menu-rename'       => 'Преименувай',
     'menu-delete'       => 'Изтрии',

@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'חזרה',
     'nav-new'           => 'תיקייה חדשה',
     'nav-upload'        => 'העלה',
-    'nav-thumbnails'    => 'תמונות ממוזערות',
-    'nav-list'          => 'רשימה',
 
     'menu-rename'       => 'שנה שם',
     'menu-delete'       => 'מחק',

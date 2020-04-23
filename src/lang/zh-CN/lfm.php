@@ -4,8 +4,6 @@ return [
     'nav-back'          => '回上一页',
     'nav-new'           => '添加文件夹',
     'nav-upload'        => '上传档案',
-    'nav-thumbnails'    => '缩略图显示',
-    'nav-list'          => '列表显示',
     'nav-sort'          => '排序',
     'nav-sort-alphabetic'=> '按字母排序',
     'nav-sort-time'     => '按时间排序',

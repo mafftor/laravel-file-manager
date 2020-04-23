@@ -4,8 +4,6 @@ return [
     'nav-back'            => 'Terug',
     'nav-new'             => 'Nieuwe Map',
     'nav-upload'          => 'Upload',
-    'nav-thumbnails'      => 'Thumbnails',
-    'nav-list'            => 'Lijst',
     'nav-sort'            => 'Sorteren',
     'nav-sort-alphabetic' => 'Sorteer op naam',
     'nav-sort-time'       => 'Sorteer op tijd',

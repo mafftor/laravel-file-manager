@@ -4,8 +4,6 @@ return [
     'nav-back'          => 'Trở lại',
     'nav-new'           => 'Thư mục mới',
     'nav-upload'        => 'Tải lên',
-    'nav-thumbnails'    => 'Hình thu nhỏ',
-    'nav-list'          => 'Danh sách',
     'nav-sort'          => 'Sắp xếp',
     'nav-sort-alphabetic'=> 'Sắp xếp theo bảng chữ cái',
     'nav-sort-time'     => 'Sắp xếp theo thời gian',
