@@ -61,13 +61,18 @@ class LfmController extends Controller
             ]);
         }
 
+        if (config('lfm.features.resize', true)) {
+            $actions = array_merge($actions, [
+                [
+                    'name' => 'resize',
+                    'icon' => 'ruler-combined',
+                    'label' => trans('laravel-file-manager::lfm.menu-resize'),
+                    'multiple' => false
+                ],
+            ]);
+        }
+
         $actions = array_merge($actions, [
-            [
-                'name' => 'resize',
-                'icon' => 'ruler-combined',
-                'label' => trans('laravel-file-manager::lfm.menu-resize'),
-                'multiple' => false
-            ],
             [
                 'name' => 'crop',
                 'icon' => 'crop',

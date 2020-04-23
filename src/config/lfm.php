@@ -91,12 +91,14 @@ return [
     | Features
     |--------------------------------------------------------------------------
     |
-    | Configure your features here by setting true or false
+    | Configure your features here by setting true or false.
+    | You can use it for hiding or displaying some features.
     |
     */
 
     'features' => [
         'move' => true,
+        'resize' => true,
     ],
 
     /*

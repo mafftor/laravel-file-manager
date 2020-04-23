@@ -269,7 +269,11 @@ var refreshFoldersAndItems = function (data) {
 };
 
 var hideNavAndShowEditor = function (data) {
+  selectable.clear();
+  selectable.disable();
+
   $('#nav-buttons > ul').addClass('d-none');
+  $('#actions').addClass('d-none');
   $('#content').html(data).removeClass('preserve_actions_space');
 };
 
@@ -336,6 +340,7 @@ function loadItems() {
         });
       }
 
+      selectable.enable();
       selectable.add(document.getElementById('content').children);
 
       $('#nav-buttons > ul').removeClass('d-none');

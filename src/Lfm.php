@@ -314,15 +314,17 @@ class Lfm
                 'as' => 'getRename',
             ]);
 
-            // scale/resize
-            Route::get('/resize', [
-                'uses' => 'ResizeController@getResize',
-                'as' => 'getResize',
-            ]);
-            Route::get('/doresize', [
-                'uses' => 'ResizeController@performResize',
-                'as' => 'performResize',
-            ]);
+            if (config('lfm.features.resize', true)) {
+                // scale/resize
+                Route::get('/resize', [
+                    'uses' => 'ResizeController@getResize',
+                    'as' => 'getResize',
+                ]);
+                Route::get('/doresize', [
+                    'uses' => 'ResizeController@performResize',
+                    'as' => 'performResize',
+                ]);
+            }
 
             // download
             Route::get('/download', [
