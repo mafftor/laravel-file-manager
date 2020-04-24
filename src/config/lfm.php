@@ -99,6 +99,7 @@ return [
     'features' => [
         'move' => true,
         'resize' => true,
+        'crop' => true,
     ],
 
     /*

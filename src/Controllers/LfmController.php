@@ -72,13 +72,18 @@ class LfmController extends Controller
             ]);
         }
 
+        if (config('lfm.features.crop', true)) {
+            $actions = array_merge($actions, [
+                [
+                    'name' => 'crop',
+                    'icon' => 'crop',
+                    'label' => trans('laravel-file-manager::lfm.menu-crop'),
+                    'multiple' => false
+                ],
+            ]);
+        }
+
         $actions = array_merge($actions, [
-            [
-                'name' => 'crop',
-                'icon' => 'crop',
-                'label' => trans('laravel-file-manager::lfm.menu-crop'),
-                'multiple' => false
-            ],
             [
                 'name' => 'trash',
                 'icon' => 'trash',

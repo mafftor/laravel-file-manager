@@ -297,19 +297,21 @@ class Lfm
                 'as' => 'getFolders',
             ]);
 
-            // crop
-            Route::get('/crop', [
-                'uses' => 'CropController@getCrop',
-                'as' => 'getCrop',
-            ]);
-            Route::get('/cropimage', [
-                'uses' => 'CropController@getCropimage',
-                'as' => 'getCropimage',
-            ]);
-            Route::get('/cropnewimage', [
-                'uses' => 'CropController@getNewCropimage',
-                'as' => 'getNewCropimage',
-            ]);
+            if (config('lfm.features.crop', true)) {
+                // crop
+                Route::get('/crop', [
+                    'uses' => 'CropController@getCrop',
+                    'as' => 'getCrop',
+                ]);
+                Route::get('/cropimage', [
+                    'uses' => 'CropController@getCropimage',
+                    'as' => 'getCropimage',
+                ]);
+                Route::get('/cropnewimage', [
+                    'uses' => 'CropController@getNewCropimage',
+                    'as' => 'getNewCropimage',
+                ]);
+            }
 
             // rename
             Route::get('/rename', [
