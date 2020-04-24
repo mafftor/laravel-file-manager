@@ -37,10 +37,10 @@ return [
     'error-folder-name'   => 'Mapnaam mag niet leeg zijn!',
     'error-folder-exist'  => 'Een map met deze naam bestaat al!',
     'error-folder-alnum'  => 'Alleen alfanumerieke map namen zijn toegestaan!',
-    'error-mime'          => 'Onverwacht MimeType: ',
+    'error-mime'          => 'Onverwacht MimeType: (:mime)',
     'error-instance'      => 'Het geuploade bestand moet een instantie zijn van UploadedFile',
     'error-invalid'       => 'Ongeldig upload verzoek',
-    'error-size'          => 'U heeft de maximale bestandsgrootte overschreden:',
+    'error-size'          => 'U heeft de maximale bestandsgrootte overschreden: (:size)',
 
     'btn-close'           => 'Sluiten',
     'btn-crop'            => 'Bijsnijden',

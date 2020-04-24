@@ -41,8 +41,8 @@ return [
     'error-folder-exist'=> 'Một thư mục có tên này đã tồn tại!',
     'error-folder-alnum'=> 'Chỉ cho phép tên thư mục chữ và số!',
     'error-folder-not-found'=> 'Không tìm thấy thư mục! (:folder)',
-    'error-mime'        => 'Unexpected MimeType: ',
-    'error-size'        => 'Kích thước quá giới hạn:',
+    'error-mime'        => 'Unexpected MimeType: (:mime)',
+    'error-size'        => 'Kích thước quá giới hạn: (:size)',
     'error-instance'    => 'Tệp đã tải lên phải là một phiên bản của UploadedFile',
     'error-invalid'     => 'Yêu cầu tải lên không hợp lệ',
 

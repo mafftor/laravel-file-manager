@@ -43,8 +43,8 @@ return [
     'error-folder-exist'=> 'Папка с таким названием уже существует!',
     'error-folder-alnum'=> 'Название папки должно содержать только цифры и латинские буквы!',
     'error-folder-not-found'=> 'Папка не найдена! (:folder)',
-    'error-mime'        => 'Неподдерживаемый MimeType: ',
-    'error-size'        => 'Размер превышает разрешенный:',
+    'error-mime'        => 'Неподдерживаемый MimeType: (:mime)',
+    'error-size'        => 'Размер превышает разрешенный: (:size)',
     'error-instance'    => 'Загруженный файл должен быть экземпляром UploadedFile',
     'error-invalid'     => 'Неверный запрос загрузки',
 

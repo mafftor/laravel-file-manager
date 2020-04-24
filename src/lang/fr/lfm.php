@@ -37,7 +37,7 @@ return [
     'error-folder-name' => 'Le nom du dossier ne peut pas être vide',
     'error-folder-exist'=> 'Un dossier avec ce nom existe déjà',
     'error-folder-alnum'=> 'Seuls les caractéres alphanumériques sont autorisés',
-    'error-mime'        => 'Type de fichier MIME non autorisé: ',
+    'error-mime'        => 'Type de fichier MIME non autorisé: (:mime)',
     'error-instance'    => 'Le fichier doit être une instance de UploadedFile',
     'error-invalid'     => "Requête d'upload invalide",
 

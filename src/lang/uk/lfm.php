@@ -43,8 +43,8 @@ return [
     'error-folder-exist'=> 'Папка з тиким ім\'ям вже існує!',
     'error-folder-alnum'=> 'Дозволені лише буквено-цифрові імена папок!',
     'error-folder-not-found'=> 'Папку не знайдено! (:folder)',
-    'error-mime'        => 'Недозволений MimeType: ',
-    'error-size'        => 'Розмір перевищує дозволений:',
+    'error-mime'        => 'Недозволений MimeType: (:mime)',
+    'error-size'        => 'Розмір перевищує дозволений: (:size)',
     'error-instance'    => 'Завантажений файл має бути екземпляром UploadedFile',
     'error-invalid'     => 'Неправильний запит на завантаження',
 

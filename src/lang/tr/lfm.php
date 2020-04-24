@@ -39,8 +39,8 @@ return [
     'error-folder-exist'=> 'Bu adda bir klasör zaten var!',
     'error-folder-alnum'=> 'Yalnızca alfasayısal klasör adlarına izin verilir!',
     'error-folder-not-found'=> 'Klasör bulunamadı! (:folder)',
-    'error-mime'        => 'Beklenmeyen Mime Türü: ',
-    'error-size'        => 'Boyut sınırın üstünde:',
+    'error-mime'        => 'Beklenmeyen Mime Türü: (:mime)',
+    'error-size'        => 'Boyut sınırın üstünde: (:size)',
     'error-instance'    => 'Yüklenen dosya, UploadedFile örneğinde olmalıdır',
     'error-invalid'     => 'Geçersiz yükleme isteği',
 

@@ -34,7 +34,7 @@ return [
     'error-folder-name' => 'اسم المجلد لا يمكن ان يكون فاغ!',
     'error-folder-exist'=> 'اسم المجلد مستخدما مسبقا!',
     'error-folder-alnum'=> 'Only alphanumeric folder names are allowed!',
-    'error-mime'        => 'نوع الملف غير معروف: ',
+    'error-mime'        => '(:mime) نوع الملف غير معروف:',
     'error-instance'    => 'The uploaded file should be an instance of UploadedFile',
     'error-invalid'     => 'طلب رفع غير صالح',
 

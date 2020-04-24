@@ -39,8 +39,8 @@ return [
     'error-folder-exist'=> '¡Ya existe una carpeta con este nombre!',
     'error-folder-alnum'=> '¡Únicamente son soportados nombres de carpetas alfanuméricos!',
     'error-folder-not-found'=> '¡La carpeta no ha sido encontrada! (:folder)',
-    'error-mime'        => 'MimeType inesperado: ',
-    'error-size'        => 'Supera el tamaño máximo:',
+    'error-mime'        => 'MimeType inesperado: (:mime)',
+    'error-size'        => 'Supera el tamaño máximo: (:size)',
     'error-instance'    => 'El archivo subido debe ser una instancia de UploadedFile',
     'error-invalid'     => 'Petición de subida inválida',
 

@@ -40,8 +40,8 @@ return [
     'error-folder-exist'=> 'Esiste già una cartella con questo nome!',
     'error-folder-alnum'=> 'Si può nominare una cartella solo con caratteri alfanumerici!',
     'error-folder-not-found'=> 'Cartella non trovata! (:folder)',
-    'error-mime'        => 'Unexpected MimeType: ',
-    'error-size'        => 'Superato il limite di dimensione:',
+    'error-mime'        => 'Unexpected MimeType: (:mime)',
+    'error-size'        => 'Superato il limite di dimensione: (:size)',
     'error-instance'    => 'Il file caricato deve essere una istanza di UploadedFile',
     'error-invalid'     => 'Richiesta di caricamento non valida',
 

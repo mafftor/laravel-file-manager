@@ -272,22 +272,22 @@ class LfmPath
 
         $new_file_name = $this->getNewName($file);
 
-        if ($this->setName($new_file_name)->exists() && !config('lfm.over_write_on_duplicate')) {
+        if ($this->setName($new_file_name)->exists() && !config('lfm.over_write_on_duplicate', false)) {
             return $this->error('file-exist');
         }
 
-        if (config('lfm.should_validate_mime', false)) {
+        if (config('lfm.should_validate_mime', true)) {
             $mimetype = $file->getMimeType();
             if (false === in_array($mimetype, $this->helper->availableMimeTypes())) {
-                return $this->error('mime') . $mimetype;
+                return $this->error('mime', ['mime' => $mimetype]);
             }
         }
 
-        if (config('lfm.should_validate_size', false)) {
+        if (config('lfm.should_validate_size', true)) {
             // size to kb unit is needed
             $file_size = $file->getSize() / 1000;
             if ($file_size > $this->helper->maxUploadSize()) {
-                return $this->error('size') . $file_size;
+                return $this->error('size', ['size' => $file_size]);
             }
         }
 
@@ -299,9 +299,9 @@ class LfmPath
         $new_file_name = $this->helper
             ->translateFromUtf8(trim(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)));
 
-        if (config('lfm.rename_file') === true) {
+        if (config('lfm.rename_file', false) === true) {
             $new_file_name = uniqid();
-        } elseif (config('lfm.alphanumeric_filename') === true) {
+        } elseif (config('lfm.alphanumeric_filename', true) === true) {
             $new_file_name = preg_replace('/[^\w-]/i', '_', $new_file_name);
         }
 

@@ -129,9 +129,9 @@ class LfmController extends Controller
      * @param array $variables
      * @return mixed
      */
-    public function error($error_type, $variables = [])
+    public function error($error_type, $variables = [], $code = 400)
     {
-        return $this->helper->error($error_type, $variables);
+        return $this->helper->error($error_type, $variables, $code);
     }
 
     /**

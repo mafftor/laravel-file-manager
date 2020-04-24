@@ -39,8 +39,8 @@ return [
     'error-folder-exist'=> '相同名称的文件夹已存在！',
     'error-folder-alnum'=> '文件夹名称只能包含英数字',
     'error-folder-not-found'=> '找不到文件夹 :folder',
-    'error-mime'        => 'Mime 格式错误 : ',
-    'error-size'        => '大小超出限制:',
+    'error-mime'        => 'Mime 格式错误: (:mime)',
+    'error-size'        => '大小超出限制: (:size)',
     'error-instance'    => '上传档案的 instance 应为 UploadedFile',
     'error-invalid'     => '验证失败，上传未成功',
 

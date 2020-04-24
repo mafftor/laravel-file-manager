@@ -41,8 +41,8 @@ return [
     'error-folder-exist'          => 'Ein Ordner mit diesem Namen ist bereits vorhanden!',
     'error-folder-alnum'          => 'Nur alphanumerische Ordnernamen sind erlaubt!',
     'error-folder-not-found'      => 'Order nicht gefunden! (:folder)',
-    'error-mime'                  => 'Unerwarteter Mimetyp:',
-    'error-size'                  => 'Dateigröße überschritten:',
+    'error-mime'                  => 'Unerwarteter Mimetyp: (:mime)',
+    'error-size'                  => 'Dateigröße überschritten: (:size)',
     'error-instance'              => 'Die hochgeladene Datei sollte eine Instanz von UploadedFile sein',
     'error-invalid'               => 'Ungültige Upload-Anfrage',
 

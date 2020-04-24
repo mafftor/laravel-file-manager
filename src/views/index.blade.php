@@ -209,6 +209,7 @@
   <script src="{{ asset('vendor/laravel-file-manager/js/cropper.min.js') }}"></script>
   <script src="{{ asset('vendor/laravel-file-manager/js/dropzone.min.js') }}"></script>
   <script src="{{ asset('vendor/laravel-file-manager/js/selectable.min.js') }}"></script>
+  <script src="{{ asset('vendor/laravel-file-manager/js/bootstrap-notify.min.js') }}"></script>
   <script>
     var lang = {!! json_encode(trans('laravel-file-manager::lfm')) !!};
     var actions = @json($actions);

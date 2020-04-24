@@ -39,8 +39,8 @@ return [
     'error-folder-exist'=> 'Egy mappa már létezik ezzel a névvel!',
     'error-folder-alnum'=> 'Csak alfanumerikus karakterek lehetnek a mappa nevében!',
     'error-folder-not-found'=> 'Nem található a(z) (:folder) nevű mappa!',
-    'error-mime'        => 'Váratlan fájltípusok (MimeType): ',
-    'error-size'        => 'Túl nagy méretű:',
+    'error-mime'        => 'Váratlan fájltípusok (MimeType): (:mime)',
+    'error-size'        => 'Túl nagy méretű: (:size)',
     'error-instance'    => 'A feltöltött fájlnak egy UploadedFile kérelemnek kellene lennie',
     'error-invalid'     => 'Érvénytelen kérés a feltöltéssel kapcsolatban.',
 

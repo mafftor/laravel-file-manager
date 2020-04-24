@@ -33,7 +33,7 @@ return [
     'error-folder-name' => 'נא להזין שם תיקייה!',
     'error-folder-exist'=> 'תיקייה עם שם זהה כבר קיימת!',
     'error-folder-alnum'=> 'Only alphanumeric folder names are allowed!',
-    'error-mime'        => 'סוג קובץ לא תקין: ',
+    'error-mime'        => 'סוג קובץ לא תקין: (mime:)',
     'error-instance'    => 'הקובץ שהועלה צריך להיות מופע של UploadedFile',
     'error-invalid'     => 'בקשת העלה לא תיקנית.',
 

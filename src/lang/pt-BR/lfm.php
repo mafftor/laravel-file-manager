@@ -39,8 +39,8 @@ return [
     'error-folder-exist'=> 'Uma pasta com este nome já existe!',
     'error-folder-alnum'=> 'Permitido somente caracteres alfanuméricos para nomes de pastas!',
     'error-folder-not-found'=> 'A pasta não foi encontrada! (:folder)',
-    'error-mime'        => 'MimeType inesperado: ',
-    'error-size'        => 'Excede o tamanho máximo:',
+    'error-mime'        => 'MimeType inesperado: (:mime)',
+    'error-size'        => 'Excede o tamanho máximo: (:size)',
     'error-instance'    => 'O arquivo enviado deve ser uma instância de UploadedFile',
     'error-invalid'     => 'Pedido de upload inválido',
 

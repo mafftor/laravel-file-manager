@@ -39,8 +39,8 @@ return [
     'error-folder-exist'=> 'En mapp med detta namn finns redan!',
     'error-folder-alnum'=> 'Endast alfanumeriska mappnamn är tillåtna!',
     'error-folder-not-found'=> 'Mappen hittades inte! (:folder)',
-    'error-mime'        => 'Oväntad MimeType: ',
-    'error-size'        => 'Över storleksgräns:',
+    'error-mime'        => 'Oväntad MimeType: (:mime)',
+    'error-size'        => 'Över storleksgräns: (:size)',
     'error-instance'    => 'Den uppladdade filen måste vara en typ UploadedFile',
     'error-invalid'     => 'Ogiltig uppladdningsförfrågan',
 

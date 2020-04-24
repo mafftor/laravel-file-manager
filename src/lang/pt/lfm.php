@@ -34,7 +34,7 @@ return [
     'error-folder-name' => 'Nome da pasta não pode ser vazio!',
     'error-folder-exist'=> 'Uma pasta com este nome já existe!',
     'error-folder-alnum'=> 'Apenas valores alfanuméricos são permitidos para o nome da pasta!',
-    'error-mime'        => 'Tipo de ficheiro não suportado: ',
+    'error-mime'        => 'Tipo de ficheiro não suportado: (:mime)',
     'error-instance'    => 'O ficheiro carregado deve ser uma instância de UploadedFile',
     'error-invalid'     => 'Pedido de upload inválido',
 

@@ -34,7 +34,7 @@ return [
     'error-folder-name' => 'Моля изберете име на папката',
     'error-folder-exist'=> 'Папка с това име вече съществува!',
     'error-folder-alnum'=> 'Only alphanumeric folder names are allowed!',
-    'error-mime'        => 'Грешен тип на файла: ',
+    'error-mime'        => 'Грешен тип на файла: (:mime)',
     'error-instance'    => 'The uploaded file should be an instance of UploadedFile ( Грешка )',
     'error-invalid'     => 'Невалидна заявка за качване',
 

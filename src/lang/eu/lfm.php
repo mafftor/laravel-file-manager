@@ -39,8 +39,8 @@ return [
     'error-folder-exist'=> 'Izen hau duen karpeta bat existitzen da dagoeneko!',
     'error-folder-alnum'=> 'Karpeta-izen alfanumerikoak soilik onartzen dira!',
     'error-folder-not-found'=> 'Ez da karpeta aurkitu! (:folder)',
-    'error-mime'        => 'Ustekabeko MIME mota: ',
-    'error-size'        => 'Muga gainditzen duen tamaina:',
+    'error-mime'        => 'Ustekabeko MIME mota: (:mime)',
+    'error-size'        => 'Muga gainditzen duen tamaina: (:size)',
     'error-instance'    => 'Kargatutako fitxategiak UploadedFile-en instantzia bat izan behar luke',
     'error-invalid'     => 'Kargatzeko eskaera baliogabea',
 

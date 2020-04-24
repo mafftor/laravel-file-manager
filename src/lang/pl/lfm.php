@@ -34,7 +34,7 @@ return [
     'error-folder-name' => 'Nazwa folderu nie może być pusta!',
     'error-folder-exist'=> 'Folder o tej nazwie już istnieje!',
     'error-folder-alnum'=> 'Dozwolone są jedynie nazwy alfanumeryczne!',
-    'error-mime'        => 'Nierozpoznawany MimeType: ',
+    'error-mime'        => 'Nierozpoznawany MimeType: (:mime)',
     'error-instance'    => 'Wgrywany obiekt powinien być instanją UploadedFile',
     'error-invalid'     => 'Nieprawidłowe zapytanie',
 

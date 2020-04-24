@@ -39,8 +39,8 @@ return [
     'error-folder-exist' => 'საქაღალდე იდენტური დასახელებით უკვე არსებობს!',
     'error-folder-alnum' => 'დასაშვებია მხოლოდ ციფრები და ასოები!',
     'error-folder-not-found' => 'საქაღალდე ვერ მოიძებნა! (:folder)',
-    'error-mime' => 'არასწორი MimeType: ',
-    'error-size' => 'ლიმიტის გადაჭარბება:',
+    'error-mime' => 'არასწორი MimeType: (:mime)',
+    'error-size' => 'ლიმიტის გადაჭარბება: (:size)',
     'error-instance' => 'აღნიშნული ფაილი უნდა იყოს UploadedFile-ის ინსტანსი',
     'error-invalid' => 'არასწორი ატვირთვის მოთხოვნა',
 

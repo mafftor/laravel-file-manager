@@ -250,14 +250,28 @@ function performLfmRequest(url, parameter, type) {
     dataType: type || 'text',
     url: lfm_route + '/' + url,
     data: data,
-    cache: false
-  }).fail(function (jqXHR, textStatus, errorThrown) {
-    displayErrorResponse(jqXHR);
+    cache: false,
+    error: function (error) {
+      var responseJSON = JSON.parse(error.responseText);
+      if (responseJSON.message !== undefined) {
+        $.notify({
+          // options
+          message: responseJSON.message,
+        },{
+          // settings
+          type: 'danger',
+          placement: {
+            from: "top",
+            align: "center"
+          },
+          animate: {
+            enter: 'animated zoomInDown',
+            exit: 'animated zoomOutUp'
+          }
+        });
+      }
+    }
   });
-}
-
-function displayErrorResponse(jqXHR) {
-  notify('<div style="max-height:50vh;overflow: scroll;">' + jqXHR.responseText + '</div>');
 }
 
 var refreshFoldersAndItems = function (data) {

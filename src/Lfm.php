@@ -4,6 +4,7 @@ namespace Mafftor\LaravelFileManager;
 
 use Exception;
 use Illuminate\Contracts\Config\Repository as Config;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -225,12 +226,14 @@ class Lfm
      *
      * @param mixed $error_type Key of message in lang file.
      * @param mixed $variables Variables the message needs.
-     * @return string
-     * @throws Exception
+     * @return JsonResponse
      */
-    public function error($error_type, $variables = [])
+    public function error($error_type, $variables = [], $code = 400)
     {
-        throw new Exception(trans(self::PACKAGE_NAME . '::lfm.error-' . $error_type, $variables));
+        return response()->json([
+            'status' => 'error',
+            'message' => trans(self::PACKAGE_NAME . '::lfm.error-' . $error_type, $variables)
+        ], $code);
     }
 
     /**
