@@ -13,16 +13,9 @@ return [
     'menu-crop'         => 'Отрежи',
 
     'title-page'        => 'Файлов мениджър',
-    'title-panel'       => 'Laravel FileManager',
     'title-upload'      => 'Качи файл',
-    'title-view'        => 'Виж файл',
     'title-user'        => 'Файлове',
     'title-share'       => 'Споделени Файлове',
-    'title-item'        => 'Елемент',
-    'title-size'        => 'Размер',
-    'title-type'        => 'Тип',
-    'title-modified'    => 'Модифицирано',
-    'title-action'      => 'Действие',
 
     'type-folder'       => 'Папка',
 
@@ -45,8 +38,6 @@ return [
     'error-instance'    => 'The uploaded file should be an instance of UploadedFile ( Грешка )',
     'error-invalid'     => 'Невалидна заявка за качване',
 
-    'btn-upload'        => 'Качи файл',
-    'btn-uploading'     => 'Качване...',
     'btn-close'         => 'Затвори',
     'btn-crop'          => 'Отрежи',
     'btn-cancel'        => 'Откажи',
@@ -59,6 +50,4 @@ return [
     'resize-old-width'  => 'Оригинална широчина:',
     'resize-new-height' => 'Височина:',
     'resize-new-width'  => 'Широчина:',
-
-    'locale-bootbox'    => 'bg',
 ];

@@ -17,16 +17,10 @@ return [
     'menu-move'                   => 'Verschieben',
 
     'title-page'                  => 'File Manager',
-    'title-panel'                 => 'FileManager',
     'title-upload'                => 'Datei hochladen',
-    'title-view'                  => 'Datei ansehen',
     'title-user'                  => 'Dateien',
     'title-share'                 => 'Gemeinsame Dateien',
-    'title-item'                  => 'Item',
-    'title-size'                  => 'Größe',
-    'title-type'                  => 'Typ',
-    'title-modified'              => 'Geändert',
-    'title-action'                => 'Aktion',
+
     'type-folder'                 => 'Ordner',
 
     'message-empty'               => 'Ordner ist leer.',
@@ -51,16 +45,7 @@ return [
     'error-size'                  => 'Dateigröße überschritten:',
     'error-instance'              => 'Die hochgeladene Datei sollte eine Instanz von UploadedFile sein',
     'error-invalid'               => 'Ungültige Upload-Anfrage',
-    'error-other'                 => 'Ein Fehler ist aufgetreten: ',
-    'error-too-large'             => 'Angeforderter Wert zu groß!',
-    'error-cannotupload'          => 'Sie sind nicht berechtigt, die Datei hochzuladen.',
-    'error-cannotdelete'          => 'Sie sind nicht berechtigt, neue Ordner / Dateien zu löschen',
-    'error-cannotnewdirectory'    => 'Sie sind nicht berechtigt, neue Ordner zu erstellen',
-    'error-cannotrename'          => 'Sie sind nicht berechtigt, Ordner / Dateien umzubenennen',
-    'error-cannotresize'          => 'Sie sind nicht berechtigt, die Dateigröße zu ändern',
 
-    'btn-upload'                  => 'Datei hochladen',
-    'btn-uploading'               => 'Hochladen...',
     'btn-close'                   => 'Schließen',
     'btn-crop'                    => 'Zuschneiden',
     'btn-copy-crop'               => 'Kopieren & Zuschneiden',
@@ -77,5 +62,4 @@ return [
     'resize-old-width'            => 'Original Breite:',
     'resize-new-height'           => 'Höhe:',
     'resize-new-width'            => 'Breite:',
-    'locale-bootbox'              => 'de',
 ];

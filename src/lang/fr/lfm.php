@@ -16,16 +16,9 @@ return [
     'menu-crop'         => 'Rogner',
 
     'title-page'        => 'Gestionnaire de fichiers',
-    'title-panel'       => 'Laravel FileManager',
     'title-upload'      => 'Envoyer un/des fichier(s)',
-    'title-view'        => 'Voir le fichier',
     'title-user'        => 'Fichiers',
     'title-share'       => 'Fichiers partagés',
-    'title-item'        => 'Élement',
-    'title-size'        => 'Taille du fichier',
-    'title-type'        => 'Type de fichier',
-    'title-modified'    => 'Date de modification',
-    'title-action'      => 'Exécuter',
 
     'type-folder'       => 'Dossier',
 
@@ -48,8 +41,6 @@ return [
     'error-instance'    => 'Le fichier doit être une instance de UploadedFile',
     'error-invalid'     => "Requête d'upload invalide",
 
-    'btn-upload'        => 'Envoyer le/les fichier(s)',
-    'btn-uploading'     => 'Envoi...',
     'btn-close'         => 'Fermer',
     'btn-crop'          => 'Rogner',
     'btn-cancel'        => 'Annuler',
@@ -62,6 +53,4 @@ return [
     'resize-old-width'  => 'Largeur originale:',
     'resize-new-height' => 'Hauteur',
     'resize-new-width'  => 'Largeur',
-
-    'locale-bootbox'    => 'fr',
 ];

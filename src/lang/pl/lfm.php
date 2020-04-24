@@ -13,16 +13,9 @@ return [
     'menu-crop'         => 'Przytnij',
 
     'title-page'        => 'Menedżer plików',
-    'title-panel'       => 'Laravel FileManager',
     'title-upload'      => 'Wgraj plik',
-    'title-view'        => 'Podgląd',
     'title-user'        => 'Pliki',
     'title-share'       => 'Udostępnione pliki',
-    'title-item'        => 'Nazwa',
-    'title-size'        => 'Rozmiar',
-    'title-type'        => 'Typ',
-    'title-modified'    => 'Utworzono',
-    'title-action'      => 'Akcje',
 
     'type-folder'       => 'Folder',
 
@@ -44,11 +37,7 @@ return [
     'error-mime'        => 'Nierozpoznawany MimeType: ',
     'error-instance'    => 'Wgrywany obiekt powinien być instanją UploadedFile',
     'error-invalid'     => 'Nieprawidłowe zapytanie',
-    'error-other'       => 'Napotkano następujący błąd: ',
-    'error-too-large'   => 'Przekroczono dozwolony czas operacji!',
 
-    'btn-upload'        => 'Wgraj plik',
-    'btn-uploading'     => 'Wgrywanie...',
     'btn-close'         => 'Zamknij',
     'btn-crop'          => 'Przytnij',
     'btn-cancel'        => 'Anuluj',
@@ -61,6 +50,4 @@ return [
     'resize-old-width'  => 'Orginalna szerokość:',
     'resize-new-height' => 'Wysokość:',
     'resize-new-width'  => 'Szerokość:',
-
-    'locale-bootbox'    => 'pl',
 ];

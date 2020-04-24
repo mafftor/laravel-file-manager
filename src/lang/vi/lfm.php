@@ -17,16 +17,9 @@ return [
     'menu-move'         => 'Di chuyển',
 
     'title-page'        => 'Quản lý tập tin',
-    'title-panel'       => 'Trình quản lý tập tin Laravel',
     'title-upload'      => 'Tải lên tập tin',
-    'title-view'        => 'Xem tài liệu',
     'title-user'        => 'Các tập tin',
     'title-share'       => 'Thư mục chia sẻ',
-    'title-item'        => 'Mục',
-    'title-size'        => 'Kích thước',
-    'title-type'        => 'Kiểu',
-    'title-modified'    => 'Sửa đổi',
-    'title-action'      => 'Hoạt động',
 
     'type-folder'       => 'Thư mục',
 
@@ -52,11 +45,7 @@ return [
     'error-size'        => 'Kích thước quá giới hạn:',
     'error-instance'    => 'Tệp đã tải lên phải là một phiên bản của UploadedFile',
     'error-invalid'     => 'Yêu cầu tải lên không hợp lệ',
-    'error-other'       => 'Một lỗi đã xảy ra: ',
-    'error-too-large'   => 'Yêu cầu thực thể quá lớn!',
 
-    'btn-upload'        => 'Tải lên tập tin',
-    'btn-uploading'     => 'Đang tải lên...',
     'btn-close'         => 'Đóng',
     'btn-crop'          => 'Cắt',
     'btn-copy-crop'     => 'Sao chép và Cắt',
@@ -73,6 +62,4 @@ return [
     'resize-old-width'  => 'Chiều rộng ban đầu:',
     'resize-new-height' => 'Chiều cao:',
     'resize-new-width'  => 'Chiều rộng:',
-
-    'locale-bootbox'    => 'vi',
 ];

@@ -16,16 +16,9 @@ return [
     'menu-crop'         => 'Beskär',
 
     'title-page'        => 'Filhanterare',
-    'title-panel'       => 'Laravel Filhanterare',
     'title-upload'      => 'Ladda upp fil(er)',
-    'title-view'        => 'Visa fil',
     'title-user'        => 'Filer',
     'title-share'       => 'Delade filer',
-    'title-item'        => 'Objekt',
-    'title-size'        => 'Storlek',
-    'title-type'        => 'Typ',
-    'title-modified'    => 'Ändrat',
-    'title-action'      => 'Hantera',
 
     'type-folder'       => 'Map',
 
@@ -50,11 +43,7 @@ return [
     'error-size'        => 'Över storleksgräns:',
     'error-instance'    => 'Den uppladdade filen måste vara en typ UploadedFile',
     'error-invalid'     => 'Ogiltig uppladdningsförfrågan',
-    'error-other'       => 'Ett fel har uppstått:',
-    'error-too-large'   => 'Objektet i begäran är för stor!',
 
-    'btn-upload'        => 'Ladda upp fil(er)',
-    'btn-uploading'     => 'Laddar upp...',
     'btn-close'         => 'Stäng',
     'btn-crop'          => 'Beskär',
     'btn-copy-crop'     => 'Kopiera & Beskär',
@@ -68,6 +57,4 @@ return [
     'resize-old-width'  => 'Original bredd:',
     'resize-new-height' => 'Höjd:',
     'resize-new-width'  => 'Bredd:',
-
-    'locale-bootbox'    => 'sv',
 ];

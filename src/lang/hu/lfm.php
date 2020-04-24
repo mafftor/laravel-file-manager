@@ -16,16 +16,9 @@ return [
     'menu-crop'         => 'Vágás',
 
     'title-page'        => 'Fájlkezelő',
-    'title-panel'       => 'Fájlkezelő',
     'title-upload'      => 'Fájl feltöltés',
-    'title-view'        => 'Fájl megtekintés',
     'title-user'        => 'Fájlok',
     'title-share'       => 'Megosztott fájlok',
-    'title-item'        => 'Elem',
-    'title-size'        => 'Méret',
-    'title-type'        => 'Típus',
-    'title-modified'    => 'Módosított',
-    'title-action'      => 'Művelet',
 
     'type-folder'       => 'Mappa',
 
@@ -50,11 +43,7 @@ return [
     'error-size'        => 'Túl nagy méretű:',
     'error-instance'    => 'A feltöltött fájlnak egy UploadedFile kérelemnek kellene lennie',
     'error-invalid'     => 'Érvénytelen kérés a feltöltéssel kapcsolatban.',
-    'error-other'       => 'Hiba történt: ',
-    'error-too-large'   => 'Túl nagyméretű a fájl!',
 
-    'btn-upload'        => 'Fájl feltöltés',
-    'btn-uploading'     => 'Feltöltés folyamatban...',
     'btn-close'         => 'Bezárás',
     'btn-crop'          => 'Vágás',
     'btn-copy-crop'     => 'Másolás és vágás',
@@ -68,6 +57,4 @@ return [
     'resize-old-width'  => 'Eredeti szélesség:',
     'resize-new-height' => 'Magasság:',
     'resize-new-width'  => 'Szélesség:',
-
-    'locale-bootbox'    => 'hu',
 ];

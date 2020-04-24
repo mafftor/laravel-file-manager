@@ -13,16 +13,9 @@ return [
     'menu-crop'         => 'Cortar',
 
     'title-page'        => 'Gestor de Arquivos',
-    'title-panel'       => 'Gestor de Arquivos',
     'title-upload'      => 'Envio de Arquivo',
-    'title-view'        => 'Ver Arquivo',
     'title-user'        => 'Arquivos',
     'title-share'       => 'Arquivos Partilhados',
-    'title-item'        => 'Item',
-    'title-size'        => 'Tamanho',
-    'title-type'        => 'Tipo',
-    'title-modified'    => 'Modificado',
-    'title-action'      => 'Ação',
 
     'type-folder'       => 'Pasta',
 
@@ -45,8 +38,6 @@ return [
     'error-instance'    => 'O ficheiro carregado deve ser uma instância de UploadedFile',
     'error-invalid'     => 'Pedido de upload inválido',
 
-    'btn-upload'        => 'Enviar Arquivo',
-    'btn-uploading'     => 'A enviar...',
     'btn-close'         => 'Fechar',
     'btn-crop'          => 'Cortar',
     'btn-cancel'        => 'Cancelar',
@@ -59,6 +50,4 @@ return [
     'resize-old-width'  => 'Largura Original:',
     'resize-new-height' => 'Altura:',
     'resize-new-width'  => 'Largura:',
-
-    'locale-bootbox'    => 'pt',
 ];

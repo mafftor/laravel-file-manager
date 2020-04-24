@@ -13,16 +13,9 @@ return [
     'menu-crop'         => 'Taie',
 
     'title-page'        => 'Manager fișiere',
-    'title-panel'       => 'Laravel FileManager',
     'title-upload'      => 'Încarcă fișier(e)',
-    'title-view'        => 'Vezi fișier',
     'title-user'        => 'Fișiere',
     'title-share'       => 'Fișiere distribuite',
-    'title-item'        => 'Element',
-    'title-size'        => 'Dimensiune',
-    'title-type'        => 'Tip',
-    'title-modified'    => 'Modificat',
-    'title-action'      => 'Acțiune',
 
     'type-folder'       => 'Folder',
 
@@ -47,11 +40,7 @@ return [
     'error-size'        => 'Dimensiune peste limită:',
     'error-instance'    => 'Fișierul încărcat trebuie să fie o instanță a UploadedFile',
     'error-invalid'     => 'Cerere invalidă de upload',
-    'error-other'       => 'A apărut o eroare: ',
-    'error-too-large'   => 'Entitate request prea mare!',
 
-    'btn-upload'        => 'Încarcă fișier(e)',
-    'btn-uploading'     => 'Încarcare...',
     'btn-close'         => 'Închide',
     'btn-crop'          => 'Taie',
     'btn-cancel'        => 'Anulează',
@@ -64,6 +53,4 @@ return [
     'resize-old-width'  => 'Lățime originală:',
     'resize-new-height' => 'Înălțime:',
     'resize-new-width'  => 'Lățime:',
-
-    'locale-bootbox'    => 'ro',
 ];

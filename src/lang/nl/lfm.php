@@ -16,16 +16,9 @@ return [
     'menu-crop'           => 'Bijsnijden',
 
     'title-page'          => 'File Manager',
-    'title-panel'         => 'Laravel FileManager',
     'title-upload'        => 'Bestand uploaden',
-    'title-view'          => 'Bestand bekijken',
     'title-user'          => 'Bestanden',
     'title-share'         => 'Openbare map',
-    'title-item'          => 'Item',
-    'title-size'          => 'Grootte',
-    'title-type'          => 'Type',
-    'title-modified'      => 'Gewijzigd',
-    'title-action'        => 'Actie',
 
     'type-folder'         => 'Map',
 
@@ -47,12 +40,8 @@ return [
     'error-mime'          => 'Onverwacht MimeType: ',
     'error-instance'      => 'Het geuploade bestand moet een instantie zijn van UploadedFile',
     'error-invalid'       => 'Ongeldig upload verzoek',
-    'error-other'         => 'Er is een fout opgetreden: ',
     'error-size'          => 'U heeft de maximale bestandsgrootte overschreden:',
-    'error-too-large'     => 'De verzoek entiteit is te groot!',
 
-    'btn-upload'          => 'Bestand uploaden',
-    'btn-uploading'       => 'Uploaden...',
     'btn-close'           => 'Sluiten',
     'btn-crop'            => 'Bijsnijden',
     'btn-copy-crop'       => 'Kopiëren & Bijsnijden',
@@ -66,6 +55,4 @@ return [
     'resize-old-width'    => 'Originele breedte:',
     'resize-new-height'   => 'Hoogte:',
     'resize-new-width'    => 'Breedte:',
-
-    'locale-bootbox'      => 'nl',
 ];

@@ -13,16 +13,9 @@ return [
     'menu-crop'         => 'Κόψιμο',
 
     'title-page'        => 'Διαχείριση αρχείων',
-    'title-panel'       => 'Laravel FileManager',
     'title-upload'      => 'Ανέβασμα αρχείου',
-    'title-view'        => 'Επισκόπηση αρχείου',
     'title-user'        => 'Αρχεία',
     'title-share'       => 'Κοινόχρηστα αρχεία',
-    'title-item'        => 'Αντικείμενο',
-    'title-size'        => 'Μέγεθος',
-    'title-type'        => 'Τύπος',
-    'title-modified'    => 'Ανανεώθηκε',
-    'title-action'      => 'Ενέργεια',
 
     'type-folder'       => 'Φάκελος',
 
@@ -45,11 +38,7 @@ return [
     'error-size'    => 'Μέγιστο μέγεθος αρχείου:',
     'error-instance'    => 'Το ανεβασμένο αρχείο έπρεπε να είναι του τύπου UploadedFile',
     'error-invalid'     => 'Λάθος αίτημα ανεβάσματος',
-    'error-other'       => 'Παρουσιάστηκε ένα σφάλμα: ',
-    'error-too-large'   => 'Το μέγεθος του αιτήματος είναι πολύ μεγάλο!',
 
-    'btn-upload'        => 'Ανέβασματα αρχείων',
-    'btn-uploading'     => 'Ανεβασμα...',
     'btn-close'         => 'Κλείσιμο',
     'btn-crop'          => 'Κόψιμο',
     'btn-cancel'        => 'Ακύρωση',
@@ -62,6 +51,4 @@ return [
     'resize-old-width'  => 'Πρωτότυπο πλάτος:',
     'resize-new-height' => 'Ύψος:',
     'resize-new-width'  => 'Μπλάτος:',
-
-    'locale-bootbox'    => 'el',
 ];

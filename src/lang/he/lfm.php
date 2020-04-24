@@ -13,16 +13,9 @@ return [
     'menu-crop'         => 'חתוך',
 
     'title-page'        => 'מנהל קבצים',
-    'title-panel'       => 'מנהל קבצים',
     'title-upload'      => 'העלאת קובץ',
-    'title-view'        => 'צפייה בקובץ',
     'title-user'        => 'קבצים',
     'title-share'       => 'קבצים משותפים',
-    'title-item'        => 'פריט',
-    'title-size'        => 'גודל',
-    'title-type'        => 'סוג',
-    'title-modified'    => 'שונה',
-    'title-action'      => 'פעולה',
 
     'type-folder'       => 'תיקייה',
 
@@ -44,8 +37,6 @@ return [
     'error-instance'    => 'הקובץ שהועלה צריך להיות מופע של UploadedFile',
     'error-invalid'     => 'בקשת העלה לא תיקנית.',
 
-    'btn-upload'        => 'העלה קובת',
-    'btn-uploading'     => 'מעלה...',
     'btn-close'         => 'סגור',
     'btn-crop'          => 'חתוך',
     'btn-cancel'        => 'בטל',
@@ -58,6 +49,4 @@ return [
     'resize-old-width'  => 'אורך מקורי:',
     'resize-new-height' => 'גובה:',
     'resize-new-width'  => 'אורך:',
-
-    'locale-bootbox'    => 'he',
 ];

@@ -16,16 +16,9 @@ return [
     'menu-crop' => 'ამოჭრა',
 
     'title-page' => 'ფაილების მენეჯერი',
-    'title-panel' => 'ფაილების მენეჯერი',
     'title-upload' => 'ფაილ(ებ)ის ატვირთვა',
-    'title-view' => 'ფაილის ნახვა',
     'title-root' => 'ფაილები',
     'title-shares' => 'გაზიარებული ფაილები',
-    'title-item' => 'Item',
-    'title-size' => 'ზომა',
-    'title-type' => 'ტიპი',
-    'title-modified' => 'დარედაქტირდა',
-    'title-action' => 'ქმედება',
 
     'type-folder' => 'საქაღალდე',
 
@@ -50,11 +43,7 @@ return [
     'error-size' => 'ლიმიტის გადაჭარბება:',
     'error-instance' => 'აღნიშნული ფაილი უნდა იყოს UploadedFile-ის ინსტანსი',
     'error-invalid' => 'არასწორი ატვირთვის მოთხოვნა',
-    'error-other' => 'შეცდომაა: ',
-    'error-too-large' => 'აღნიშნული ფაილი ძალიან დიდია!',
 
-    'btn-upload' => 'ფაილ(ებ)ის ატვირთვა',
-    'btn-uploading' => 'იტვირთება...',
     'btn-close' => 'დახურვა',
     'btn-crop' => 'ამოჭრა',
     'btn-copy-crop' => 'დაკოპირება & ამოჭრა',
@@ -68,6 +57,4 @@ return [
     'resize-old-width' => 'ორიგინალის სიგანე:',
     'resize-new-height' => 'სიმაღლე:',
     'resize-new-width' => 'სიგანე:',
-
-    'locale-bootbox' => 'ka',
 ];

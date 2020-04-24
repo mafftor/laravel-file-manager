@@ -18,16 +18,9 @@ return [
     'menu-search'       => 'Поиск',
 
     'title-page'        => 'Менеджер файлов',
-    'title-panel'       => 'Laravel FileManager',
     'title-upload'      => 'Загрузка файла',
-    'title-view'        => 'Просмотр файла',
     'title-user'        => 'Файлы',
     'title-share'       => 'Общие файлы',
-    'title-item'        => 'Номер',
-    'title-size'        => 'Размер',
-    'title-type'        => 'Тип',
-    'title-modified'    => 'Изменен',
-    'title-action'      => 'Действие',
 
     'type-folder'       => 'Папка',
 
@@ -54,11 +47,7 @@ return [
     'error-size'        => 'Размер превышает разрешенный:',
     'error-instance'    => 'Загруженный файл должен быть экземпляром UploadedFile',
     'error-invalid'     => 'Неверный запрос загрузки',
-    'error-other'       => 'Произошла ошибка: ',
-    'error-too-large'   => 'Размер загружаемого файла слишком велик!',
 
-    'btn-upload'        => 'Загрузить файл',
-    'btn-uploading'     => 'Загрузка...',
     'btn-close'         => 'Закрыть',
     'btn-crop'          => 'Обрезать',
     'btn-copy-crop'     => 'Скопировать & Обрезать',
@@ -75,6 +64,4 @@ return [
     'resize-old-width'  => 'Оригинальная ширина:',
     'resize-new-height' => 'Высота:',
     'resize-new-width'  => 'Ширина:',
-
-    'locale-bootbox'    => 'ru',
 ];

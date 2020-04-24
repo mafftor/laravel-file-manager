@@ -17,16 +17,9 @@ return [
     'menu-crop'         => 'Taglia',
 
     'title-page'        => 'File Manager',
-    'title-panel'       => 'Laravel FileManager',
     'title-upload'      => 'Carica File(s)',
-    'title-view'        => 'Vedi File',
     'title-user'        => 'Files',
     'title-share'       => 'Files Condivisi',
-    'title-item'        => 'Voce',
-    'title-size'        => 'Dimensione',
-    'title-type'        => 'Tipo',
-    'title-modified'    => 'Modificato',
-    'title-action'      => 'Azione',
 
     'type-folder'       => 'Cartella',
 
@@ -51,11 +44,7 @@ return [
     'error-size'        => 'Superato il limite di dimensione:',
     'error-instance'    => 'Il file caricato deve essere una istanza di UploadedFile',
     'error-invalid'     => 'Richiesta di caricamento non valida',
-    'error-other'       => 'Si è veriifcato un errore: ',
-    'error-too-large'   => 'Richiesta di entità troppo grande!',
 
-    'btn-upload'        => 'Carica File(s)',
-    'btn-uploading'     => 'Sto Caricando...',
     'btn-close'         => 'Chiudi',
     'btn-crop'          => 'Taglia',
     'btn-copy-crop'     => 'Copia & Taglia',
@@ -69,6 +58,4 @@ return [
     'resize-old-width'  => 'Larghezza Originale:',
     'resize-new-height' => 'Altezza:',
     'resize-new-width'  => 'Larghezza:',
-
-    'locale-bootbox'    => 'it',
 ];

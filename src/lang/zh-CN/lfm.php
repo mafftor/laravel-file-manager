@@ -16,16 +16,9 @@ return [
     'menu-crop'         => '裁剪',
 
     'title-page'        => '档案管理',
-    'title-panel'       => '档案管理',
     'title-upload'      => '上传档案',
-    'title-view'        => '预览档案',
     'title-user'        => '我的档案',
     'title-share'       => '共享的文件',
-    'title-item'        => '项目名称',
-    'title-size'        => '档案大小',
-    'title-type'        => '档案类型',
-    'title-modified'    => '上次修改',
-    'title-action'      => '操作',
 
     'type-folder'       => '文件夹',
 
@@ -50,11 +43,7 @@ return [
     'error-size'        => '大小超出限制:',
     'error-instance'    => '上传档案的 instance 应为 UploadedFile',
     'error-invalid'     => '验证失败，上传未成功',
-    'error-other'       => '发生错误: ',
-    'error-too-large'   => '请求内容太大!',
 
-    'btn-upload'        => '上传',
-    'btn-uploading'     => '上传中...',
     'btn-close'         => '关闭',
     'btn-crop'          => '裁剪',
     'btn-copy-crop'     => '复制并裁剪',
@@ -68,6 +57,4 @@ return [
     'resize-old-width'  => '原始宽度:',
     'resize-new-height' => '目前高度:',
     'resize-new-width'  => '目前宽度:',
-
-    'locale-bootbox'    => 'zh_CN',
 ];

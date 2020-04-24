@@ -17,16 +17,9 @@ return [
     'menu-move'         => '搬移',
 
     'title-page'        => '檔案管理',
-    'title-panel'       => '檔案管理',
     'title-upload'      => '上傳檔案',
-    'title-view'        => '預覽檔案',
     'title-user'        => '我的檔案',
     'title-share'       => '共享的檔案',
-    'title-item'        => '項目名稱',
-    'title-size'        => '檔案大小',
-    'title-type'        => '檔案類型',
-    'title-modified'    => '上次修改',
-    'title-action'      => '操作',
 
     'type-folder'       => '資料夾',
 
@@ -51,11 +44,7 @@ return [
     'error-mime'        => 'Mime 格式錯誤 : ',
     'error-instance'    => '上傳檔案的 instance 應為 UploadedFile',
     'error-invalid'     => '驗證失敗，上傳未成功',
-    'error-other'       => '發生錯誤: ',
-    'error-too-large'   => '請求內容太大!',
 
-    'btn-upload'        => '上傳',
-    'btn-uploading'     => '上傳中...',
     'btn-close'         => '關閉',
     'btn-crop'          => '裁剪',
     'btn-copy-crop'     => '裁剪為新的檔案',
@@ -72,6 +61,4 @@ return [
     'resize-old-width'  => '原始寬度:',
     'resize-new-height' => '目前高度:',
     'resize-new-width'  => '目前寬度:',
-
-    'locale-bootbox'    => 'zh_TW',
 ];

@@ -16,16 +16,9 @@ return [
     'menu-crop'         => 'Moztu',
 
     'title-page'        => 'Fitxategi-kudeatzailea',
-    'title-panel'       => 'Laravel fitxategi-kudeatzailea',
     'title-upload'      => 'Kargatu fitxategia(k)',
-    'title-view'        => 'Ikusi fitxategia',
     'title-root'        => 'Fitxategiak',
     'title-shares'      => 'Partekatutako fitxategiak',
-    'title-item'        => 'Elementua',
-    'title-size'        => 'Tamaina',
-    'title-type'        => 'Mota',
-    'title-modified'    => 'Aldatua',
-    'title-action'      => 'Ekintza',
 
     'type-folder'       => 'Karpeta',
 
@@ -50,11 +43,7 @@ return [
     'error-size'        => 'Muga gainditzen duen tamaina:',
     'error-instance'    => 'Kargatutako fitxategiak UploadedFile-en instantzia bat izan behar luke',
     'error-invalid'     => 'Kargatzeko eskaera baliogabea',
-    'error-other'       => 'Errore bat gertatu da: ',
-    'error-too-large'   => 'Eskaera entitatea handiegia da!',
 
-    'btn-upload'        => 'Kargatu fitxategia(k)',
-    'btn-uploading'     => 'Kargatzen...',
     'btn-close'         => 'Itxi',
     'btn-crop'          => 'Moztu',
     'btn-copy-crop'     => 'Kopiatu eta moztu',
@@ -68,6 +57,4 @@ return [
     'resize-old-width'  => 'Jatorrizko zabalera:',
     'resize-new-height' => 'Altuera:',
     'resize-new-width'  => 'Zabalera:',
-
-    'locale-bootbox'    => 'eu',
 ];

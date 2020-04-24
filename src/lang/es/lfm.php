@@ -16,16 +16,9 @@ return [
     'menu-crop'         => 'Recortar',
 
     'title-page'        => 'Administrador de Archivos',
-    'title-panel'       => 'Administrador de Archivos',
     'title-upload'      => 'Subir Archivo',
-    'title-view'        => 'Ver Archivo',
     'title-user'        => 'Archivos',
     'title-share'       => 'Archivos Compartidos',
-    'title-item'        => 'Item',
-    'title-size'        => 'Tamaño',
-    'title-type'        => 'Tipo',
-    'title-modified'    => 'Modificado',
-    'title-action'      => 'Acción',
 
     'type-folder'       => 'Carpeta',
 
@@ -50,11 +43,7 @@ return [
     'error-size'        => 'Supera el tamaño máximo:',
     'error-instance'    => 'El archivo subido debe ser una instancia de UploadedFile',
     'error-invalid'     => 'Petición de subida inválida',
-    'error-other'       => 'Se ha producido un error: ',
-    'error-too-large'   => '¡Entidad de petición demasiado grande!',
 
-    'btn-upload'        => 'Subir Archivo',
-    'btn-uploading'     => 'Subiendo...',
     'btn-close'         => 'Cerrar',
     'btn-crop'          => 'Recortar',
     'btn-copy-crop'     => 'Copiar y recortar',
@@ -68,7 +57,4 @@ return [
     'resize-old-width'  => 'Ancho Original:',
     'resize-new-height' => 'Alto:',
     'resize-new-width'  => 'Ancho:',
-
-    'locale-bootbox'    => 'es',
-
 ];

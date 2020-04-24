@@ -13,16 +13,9 @@ return [
     'menu-crop'         => 'قص',
 
     'title-page'        => 'مدير الملفات',
-    'title-panel'       => 'مدير الملفات',
     'title-upload'      => 'رفع ملف',
-    'title-view'        => 'عرض الملف',
     'title-user'        => 'الملفات',
     'title-share'       => 'الملفات المشتركة',
-    'title-item'        => 'ملف',
-    'title-size'        => 'الحجم',
-    'title-type'        => 'النوع',
-    'title-modified'    => 'اخر تعديل',
-    'title-action'      => 'اجراء',
 
     'type-folder'       => 'مجلد',
 
@@ -44,11 +37,7 @@ return [
     'error-mime'        => 'نوع الملف غير معروف: ',
     'error-instance'    => 'The uploaded file should be an instance of UploadedFile',
     'error-invalid'     => 'طلب رفع غير صالح',
-    'error-other'       => 'حدثت مشكلة: ',
-    'error-too-large'   => 'الملف كبير جدا',
 
-    'btn-upload'        => 'رفع الملف',
-    'btn-uploading'     => 'جاري الرفع...',
     'btn-close'         => 'اغلاق',
     'btn-crop'          => 'قص',
     'btn-cancel'        => 'الغاء',
@@ -61,6 +50,4 @@ return [
     'resize-old-width'  => 'العرض الاصلي:',
     'resize-new-height' => 'الارتفاع:',
     'resize-new-width'  => 'العرض:',
-
-    'locale-bootbox'    => 'ar',
 ];

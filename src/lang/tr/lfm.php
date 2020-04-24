@@ -16,16 +16,9 @@ return [
     'menu-crop'         => 'Kırp',
 
     'title-page'        => 'Dosya Kütüphanesi',
-    'title-panel'       => 'Laravel Dosya Kütüphanesi',
     'title-upload'      => 'Dosya Yükle',
-    'title-view'        => 'Dosya Gör',
     'title-user'        => 'Dosyalarım',
     'title-share'       => 'Paylaşılan Dosyalar',
-    'title-item'        => 'Dosya',
-    'title-size'        => 'Boyut',
-    'title-type'        => 'Tür',
-    'title-modified'    => 'Güncelleme',
-    'title-action'      => 'Komutlar',
 
     'type-folder'       => 'Klasör',
 
@@ -50,11 +43,7 @@ return [
     'error-size'        => 'Boyut sınırın üstünde:',
     'error-instance'    => 'Yüklenen dosya, UploadedFile örneğinde olmalıdır',
     'error-invalid'     => 'Geçersiz yükleme isteği',
-    'error-other'       => 'Bir hata oluştu: ',
-    'error-too-large'   => 'Girilen veri çok fazla!',
 
-    'btn-upload'        => 'Yükle',
-    'btn-uploading'     => 'Yükleniyor...',
     'btn-close'         => 'Kapat',
     'btn-crop'          => 'Kırp',
     'btn-copy-crop'     => 'Kopyala & Kes',
@@ -68,6 +57,4 @@ return [
     'resize-old-width'  => 'Orijinal Genişlik:',
     'resize-new-height' => 'Yükseklik:',
     'resize-new-width'  => 'Genişlik:',
-
-    'locale-bootbox'    => 'tr',
 ];

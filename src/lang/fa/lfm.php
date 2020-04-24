@@ -17,16 +17,9 @@ return [
     'menu-move'         => 'انتقال',
 
     'title-page'        => 'مدیریت فایل',
-    'title-panel'       => 'مدیریت فایل لاراول',
     'title-upload'      => 'آپلود فایل',
-    'title-view'        => 'مشاهده فایل',
     'title-user'        => 'فایل ها',
     'title-share'       => 'فایل های اشتراکی',
-    'title-item'        => 'آیتم',
-    'title-size'        => 'اندازه',
-    'title-type'        => 'نوع',
-    'title-modified'    => 'تاریخ آخرین ویرایش',
-    'title-action'      => 'اقدام',
 
     'type-folder'       => 'پوشه',
 
@@ -52,11 +45,7 @@ return [
     'error-size'        => 'سایز بیش از حد:',
     'error-instance'    => 'فایل آپلود شده باید نمونه ای از UploadedFile باشد',
     'error-invalid'     => 'درخواست آپلود غیرمعتبر',
-    'error-other'       => 'خطایی رخ داد: ',
-    'error-too-large'   => 'درخواست موجودیت خیلی طولانیست!',
 
-    'btn-upload'        => 'آپلود فایل',
-    'btn-uploading'     => 'در حال آپلود',
     'btn-close'         => 'بستن',
     'btn-crop'          => 'برش',
     'btn-copy-crop'     => 'برش و ذخیره در فایل جدید',
@@ -73,6 +62,4 @@ return [
     'resize-old-width'  => 'عرض اصلی:',
     'resize-new-height' => 'ارتفاع:',
     'resize-new-width'  => 'عرض:',
-
-    'locale-bootbox'    => 'fa',
 ];

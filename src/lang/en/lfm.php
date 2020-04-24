@@ -18,16 +18,9 @@ return [
     'menu-search'       => 'Search',
 
     'title-page'        => 'File Manager',
-    'title-panel'       => 'Laravel FileManager',
     'title-upload'      => 'Upload File(s)',
-    'title-view'        => 'View File',
     'title-user'        => 'Files',
     'title-share'       => 'Shared Files',
-    'title-item'        => 'Item',
-    'title-size'        => 'Size',
-    'title-type'        => 'Type',
-    'title-modified'    => 'Modified',
-    'title-action'      => 'Action',
 
     'type-folder'       => 'Folder',
 
@@ -54,11 +47,7 @@ return [
     'error-size'        => 'Over limit size:',
     'error-instance'    => 'The uploaded file should be an instance of UploadedFile',
     'error-invalid'     => 'Invalid upload request',
-    'error-other'       => 'An error has occured: ',
-    'error-too-large'   => 'Request entity too large!',
 
-    'btn-upload'        => 'Upload File(s)',
-    'btn-uploading'     => 'Uploading...',
     'btn-close'         => 'Close',
     'btn-crop'          => 'Crop',
     'btn-copy-crop'     => 'Copy & Crop',
