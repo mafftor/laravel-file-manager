@@ -238,6 +238,23 @@ class LfmItem
         return true;
     }
 
+    public function shouldCompressImage()
+    {
+        if (!$this->helper->config('compress_image', 90)) {
+            return false;
+        }
+
+        if (!$this->isImage()) {
+            return false;
+        }
+
+        if (in_array($this->mimeType(), ['image/gif', 'image/svg+xml'])) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function get()
     {
         return $this->lfm->get();

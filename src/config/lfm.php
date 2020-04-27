@@ -131,6 +131,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Compressing
+    |--------------------------------------------------------------------------
+    |
+    | This is value of your compressing of images, set up integer degree
+    | from 0 to 100 where 0 is min and 100 is max quality of image.
+    | Do not set value below then 50, it can broke your image quality!
+    |
+    | Recommended => 80-90
+    | To disable => false
+    |
+    */
+
+    'compress_image' => 90,
+
+    /*
+    |--------------------------------------------------------------------------
     | Thumbnail
     |--------------------------------------------------------------------------
      */

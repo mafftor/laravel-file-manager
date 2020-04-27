@@ -320,6 +320,8 @@ class LfmPath
 
         $this->makeThumbnail($new_file_name);
 
+        $this->compressImage($new_file_name);
+
         return $new_file_name;
     }
 
@@ -338,6 +340,24 @@ class LfmPath
         $this->setName($file_name)->thumb(true);
         $image = Image::make($original_image->get())
             ->fit(config('lfm.thumb_img_width', 200), config('lfm.thumb_img_height', 200));
+
+        $this->storage->put($image->stream()->detach());
+    }
+
+    /**
+     * Compress the image if it possible
+     *
+     * @param $file_name
+     */
+    public function compressImage($file_name)
+    {
+        $original_image = $this->pretty($file_name);
+
+        if (!$original_image->shouldCompressImage()) {
+            return;
+        }
+
+        $image = Image::make($original_image->get())->save($original_image->path(), config('lfm.compress_image', 90));
 
         $this->storage->put($image->stream()->detach());
     }
