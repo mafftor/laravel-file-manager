@@ -78,7 +78,7 @@
               </div>
             </div>
             <div class="col-auto">
-              <div class="btn-group mr-5 mr-lg-0">
+              <div class="btn-group">
                 <a class="btn btn-light" data-display="list">
                   <i class="fas fa-list-ul fa-fw"></i>
                 </a>
@@ -208,7 +208,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="{{ asset('vendor/laravel-file-manager/js/cropper.min.js') }}"></script>
   <script src="{{ asset('vendor/laravel-file-manager/js/dropzone.min.js') }}"></script>
-  <script src="{{ asset('vendor/laravel-file-manager/js/selectable.min.js') }}"></script>
+  <script src="{{ asset('vendor/laravel-file-manager/js/selectable.js') }}"></script>
   <script src="{{ asset('vendor/laravel-file-manager/js/bootstrap-notify.min.js') }}"></script>
   <script>
     var lang = {!! json_encode(trans('laravel-file-manager::lfm')) !!};

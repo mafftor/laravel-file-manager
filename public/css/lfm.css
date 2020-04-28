@@ -274,6 +274,10 @@ a {
   font-size: 50px;
 }
 
+.ui-selectable {
+  touch-action: initial;
+}
+
 .ui-selecting {
   background-color: rgba(107, 204, 249, 0.15);
 }
@@ -519,9 +523,7 @@ time {
   }
 
   #content {
-    border-right: 1px solid rgb(221, 221, 221);
     background: #fff;
-    margin-right: 50px;
     min-height: calc(100vh - 56px);
   }
 }

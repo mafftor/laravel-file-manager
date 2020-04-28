@@ -6,6 +6,8 @@ var search = '';
 var cache = {};
 
 const selectable = new Selectable({
+  touch: false,
+  toggleTouch: true,
   appendTo: '#content',
   lasso: {
     border: '1px solid #fff',
