@@ -246,6 +246,11 @@
             this.defaultOptions.error(file, response.join('\n'));
           }
         });
+        this.on('error', function(file, response) {
+          if (response.message !== undefined) {
+            this.defaultOptions.error(file, response.message);
+          }
+        });
       },
       headers: {
         'Authorization': 'Bearer ' + getUrlParam('token')
