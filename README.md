@@ -1,12 +1,12 @@
-<p align="center">
-  <a target="_blank" href="https://packagist.org/packages/mafftor/laravel-file-manager"><img src="https://poser.pugx.org/mafftor/laravel-file-manager/downloads"></a>
-  <a target="_blank" href="https://packagist.org/packages/mafftor/laravel-file-manager"><img src="https://img.shields.io/packagist/dm/mafftor/laravel-file-manager.svg"></a>
-  <a target="_blank" href="https://packagist.org/packages/mafftor/laravel-file-manager"><img src="https://img.shields.io/badge/stable-2.0.0-blue.svg"></a>
-  <a target="_blank" href="https://packagist.org/packages/mafftor/laravel-file-manager"><img src="https://poser.pugx.org/mafftor/laravel-file-manager/license"></a>
-</p>
+# Laravel File Manager
 
-## This is advanced version of  <a target="_blank" href="https://github.com/UniSharp/laravel-filemanager">UniSharp/laravel-filemanager</a> v2.0.0.
-### Now it will grow as single project. Your contributing is welcome here :)
+<p align="center">
+  <a target="_blank" href="https://packagist.org/packages/mafftor/laravel-file-manager"><img src="https://poser.pugx.org/mafftor/laravel-file-manager/downloads?format=flat-square"></a>
+  <a target="_blank" href="https://packagist.org/packages/mafftor/laravel-file-manager"><img src="https://img.shields.io/packagist/dm/mafftor/laravel-file-manager.svg?style=flat-square"></a>
+  <a target="_blank" href="https://github.com/mafftor/laravel-file-manager/issues"><img src="https://img.shields.io/github/issues/mafftor/laravel-file-manager?style=flat-square"></a>
+  <a target="_blank" href="https://github.com/mafftor/laravel-file-manager/releases"><img src="https://poser.pugx.org/mafftor/laravel-file-manager/v/stable?format=flat-square"></a>
+  <a target="_blank" href="https://github.com/mafftor/laravel-file-manager/blob/master/LICENSE"><img src="https://poser.pugx.org/mafftor/laravel-file-manager/license?format=flat-square"></a>
+</p>
 
 <p align="center">
   <a href="https://github.com/mafftor/laravel-file-manager/blob/master/docs/index.md">Documents</a>
@@ -26,20 +26,27 @@
   <a href="https://github.com/mafftor/laravel-file-manager/blob/master/docs/contribution.md">Contribution</a>
 </p>
 
-##These our primary features:
-* RWD user interface.
-* multiple files selection.
-* cloud storages integration(with Laravel file system).
-* code and increased test coverage.
+<p align="center">
+  This is advanced version of <a target="_blank" href="https://github.com/UniSharp/laravel-filemanager">UniSharp/laravel-filemanager</a> v2.0.0
+</p>
 
-There are still some thing we need to do make this package better:
-* [ ] Documents for v2.0.0
-* [ ] Events should pass object instead of only file path
-* [ ] Add more events for files and folders manipulation
+## Features:
+* Responsive web design and usability.
+* Multiple files selection.
+* Integration with popular WYSIWYG editors.
+* Search with autocomplete in any folder.
+* Cloud storage integration (with Laravel file system).
+* Rename, Move, Edit, Crop, Resize, Delete: you can control these features and disable if you needed
+* Code and increased test coverage.
 
-We are also going to gain more integration like vue.js and Laravel Nova. Any PR is welcome!
-
+## How Does It look like?
 ![RWD demo](https://unisharp.github.io/laravel-filemanager/images/screenshots-v2.png)
+
+## TODO:
+* [ ] Rewrite front to (React, Vue, Angular).
+* [ ] Redesign.
+* [ ] Docs.
+* [ ] Code's refactoring and improvements.
 
 ## Contributors & Credits
 
@@ -52,7 +59,7 @@ We are also going to gain more integration like vue.js and Laravel Nova. Any PR 
 
 ### Contributors
 
- * [All contibutors](https://github.com/UniSharp/laravel-filemanager/graphs/contributors) from GitHub. (issues / PR)
+ * [All contibutors](https://github.com/mafftor/laravel-file-manager/graphs/contributors) from GitHub. (issues / PR)
  * [@taswler](https://github.com/tsawler) the original author of this package.
  * [@UniSharp](https://github.com/UniSharp) the second author of this package.
  * Nathan for providing security suggestions.
@@ -63,4 +70,4 @@ We are also going to gain more integration like vue.js and Laravel Nova. Any PR 
  * [@olivervogel](https://github.com/olivervogel) for the awesome [image library](https://github.com/Intervention/image).
  * SVG Loaders by [Sam](http://samherbert.net/svg-loaders/) (Licensed MIT)
  * Articles and videos which helped promoting this package.
- * All users and you.
+ * All users and you <3
