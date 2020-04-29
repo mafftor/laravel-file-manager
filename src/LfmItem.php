@@ -4,14 +4,25 @@ namespace Mafftor\LaravelFileManager;
 
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Intervention\Image\Facades\Image;
 
 class LfmItem
 {
     private $lfm;
     private $helper;
 
-    private $columns = ['name', 'file_name', 'url', 'size', 'time', 'dimensions', 'icon', 'is_file', 'is_image', 'thumb_url'];
+    private $columns = [
+        'name',
+        'file_name',
+        'url',
+        'size',
+        'time',
+        'dimensions',
+        'icon',
+        'is_file',
+        'is_image',
+        'thumb_url',
+    ];
+
     public $attributes = [];
 
     public function __construct(LfmPath $lfm, Lfm $helper)
@@ -143,30 +154,11 @@ class LfmItem
     public function dimensions()
     {
         if ($this->isImage() && !$this->isSvg()) {
-            return $this->width() . 'x' . $this->height();
+            list($width, $height) = getimagesize($this->path());
+            return $width . 'x' . $height;
         }
 
         return false;
-    }
-
-    /**
-     * Get width of the image
-     *
-     * @return bool|int
-     */
-    public function width()
-    {
-        return $this->isImage() && !$this->isSvg() ? Image::make($this->path())->width() : false;
-    }
-
-    /**
-     * Get height of the image
-     *
-     * @return bool|int
-     */
-    public function height()
-    {
-        return $this->isImage() && !$this->isSvg() ? Image::make($this->path())->height() : false;
     }
 
     public function thumbUrl()
