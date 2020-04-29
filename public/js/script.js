@@ -1,5 +1,5 @@
 var lfm_route = location.origin + location.pathname;
-var show_list;
+var show_list = window.localStorage.getItem('show_list');
 var sort_type = 'alphabetic';
 var items = [];
 var search = '';
@@ -151,9 +151,22 @@ $(document).on('click', '#upload', function () {
 });
 
 $(document).on('click', '[data-display]', function() {
-  show_list = $(this).data('display');
-  loadItems();
+  displayHandler($(this).data('display'));
 });
+
+function displayHandler(list) {
+  show_list = list;
+
+  window.localStorage.setItem('show_list', show_list);
+
+  $('#content')
+      .removeAttr('class')
+      .addClass(show_list)
+      .addClass('preserve_actions_space');
+
+  $('[data-display]').removeClass('active');
+  $('[data-display="' + show_list + '"]').addClass('active');
+}
 
 $(document).on('click', '[data-action]', function() {
   window[$(this).data('action')]($(this).data('multiple') ? getSelectedItems() : getSelectedItems()[0]);
@@ -308,14 +321,14 @@ function loadItems() {
       var response = JSON.parse(data);
       var working_dir = response.working_dir;
       items = response.items;
-      show_list = response.display;
+
+      displayHandler(response.display);
+
       var hasItems = items.length !== 0;
       $('#empty').toggleClass('d-none', hasItems);
-      $('#content').html('').removeAttr('class').toggleClass('d-none', !hasItems);
+      $('#content').html('').toggleClass('d-none', !hasItems);
 
       if (hasItems) {
-        $('#content').addClass(show_list).addClass('preserve_actions_space');
-
         items.forEach(function (item, index) {
           var template = $('#item-template').clone()
             .removeAttr('id class')
@@ -390,9 +403,6 @@ function loadItems() {
 
         $('#breadcrumbs ol').append(li);
       });
-
-      $('[data-display]').removeClass('active');
-      $('[data-display="' + show_list + '"]').addClass('active');
 
       var atRootFolder = getPreviousDir() == '';
       $('#to-previous').toggleClass('d-none invisible-lg', atRootFolder);
