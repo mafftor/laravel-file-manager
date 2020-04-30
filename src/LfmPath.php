@@ -299,10 +299,10 @@ class LfmPath
         $new_file_name = $this->helper
             ->translateFromUtf8(trim(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)));
 
-        if (config('lfm.rename_file', false) === true) {
+        if (config('lfm.rename_file.uniqid', false) === true) {
             $new_file_name = uniqid();
-        } elseif (config('lfm.alphanumeric_filename', true) === true) {
-            $new_file_name = preg_replace('/[^\w-]/i', '_', $new_file_name);
+        } elseif (config('lfm.rename_file.slug', true) === true) {
+            $new_file_name = str_slug($new_file_name);
         }
 
         $extension = $file->getClientOriginalExtension();

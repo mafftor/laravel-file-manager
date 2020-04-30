@@ -114,20 +114,36 @@ return [
 
     'disk' => 'public',
 
-    'rename_file' => false,
-
     'alphanumeric_filename' => true,
-
     'alphanumeric_directory' => true,
 
     'should_validate_size' => true,
-
     'should_validate_mime' => true,
 
     // behavior on files with identical name
     // setting it to true cause old file replace with new one
     // setting it to false show `error-file-exist` error and stop upload
     'over_write_on_duplicate' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | File naming
+    |--------------------------------------------------------------------------
+    |
+    | It works only when you're uploading a new file!
+    |
+    | rename_file.uniqid - Generate a unique ID (length:13) (e.g 5e94a2653ef6a)
+    | rename_file.slug - Generate friendly "slug" ("Te sT .txt" => "te-st.txt")
+    |
+    | Make sure that you have enabled only one feature of rename_file because
+    | of conflicts
+    |
+    */
+
+    'rename_file' => [
+        'uniqid' => false,
+        'slug' => true,
+    ],
 
     /*
     |--------------------------------------------------------------------------
