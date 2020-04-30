@@ -84,6 +84,7 @@ a {
 #tree {
   background-color: white;
   width: 300px;
+  border-right: 1px solid rgb(221, 221, 221);
 }
 
 @media screen and (max-width: 991px) {
