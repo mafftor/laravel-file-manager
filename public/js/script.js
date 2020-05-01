@@ -123,14 +123,24 @@ function toggleMobileTree(should_display) {
   if (should_display === undefined) {
     should_display = !$('#tree').hasClass('in');
   }
-  $('#tree').toggleClass('in', should_display);
+
+  // Ony tablet and mobile
+  if ($(window).width() <= 991) {
+    if (should_display) {
+      $('#tree').css({
+        height: 'calc(100% - ' + parseInt($('#nav').outerHeight()) + 'px)'
+      });
+    }
+
+    $('#main').toggleClass('overlay', should_display);
+    $('body').toggleClass('ovh', should_display);
+    $('#tree').toggleClass('in', should_display);
+  }
 }
 
 $('#show_tree').click(function (e) {
+  toggleMobileSearch(false);
   toggleMobileTree();
-  if ($('#main').hasClass('overlay')) {
-    toggleMobileSearch(false);
-  }
 });
 
 $('#main').click(function () {

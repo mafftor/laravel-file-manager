@@ -1,7 +1,5 @@
-/* General */
-
 a {
-  color: #333844;
+  color: #24292e;
   text-decoration: none !important;
   cursor: pointer;
 }
@@ -11,11 +9,7 @@ a {
 }
 
 #nav, #nav .dropdown-menu, .bg-main {
-  background-color: #333844;
-}
-
-#nav .dropdown-menu > a:hover {
-  color: #333844;
+  background-color: #24292e;
 }
 
 #actions {
@@ -85,6 +79,12 @@ a {
   background-color: white;
   width: 300px;
   border-right: 1px solid rgb(221, 221, 221);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#tree .nav {
+  padding-bottom: 4rem;
 }
 
 @media screen and (max-width: 991px) {
@@ -93,7 +93,7 @@ a {
     z-index: 999;
     left: 0;
     transform: translateX(-100%);
-    transition: 1s transform;
+    transition: .3s transform;
   }
 
   #tree.in {
@@ -434,7 +434,6 @@ time {
 .navbar-search input {
   width: 300px;
   transition: width .2s ease, opacity .2s ease;
-  opacity: .9;
 }
 
 @media screen and (max-width: 1399px) {
@@ -453,7 +452,6 @@ time {
 .navbar-search input:active,
 .navbar-search input:focus {
   width: 300px;
-  opacity: 1;
 }
 
 .navbar-search .mobile-search {
@@ -510,7 +508,7 @@ time {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     background: rgba(0, 0, 0, 0.54);
     opacity: 0;
     visibility: hidden;
