@@ -240,7 +240,7 @@
       init: function() {
         var _this = this; // For the closure
         this.on('success', function(file, response) {
-          if (response == 'OK') {
+          if (response === 'OK') {
             loadFolders();
           } else {
             this.defaultOptions.error(file, response.join('\n'));
