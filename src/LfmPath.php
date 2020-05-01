@@ -3,6 +3,7 @@
 namespace Mafftor\LaravelFileManager;
 
 use Illuminate\Container\Container;
+use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Mafftor\LaravelFileManager\Events\ImageIsUploading;
@@ -302,7 +303,7 @@ class LfmPath
         if (config('lfm.rename_file.uniqid', false) === true) {
             $new_file_name = uniqid();
         } elseif (config('lfm.rename_file.slug', true) === true) {
-            $new_file_name = str_slug($new_file_name);
+            $new_file_name = Str::slug($new_file_name);
         }
 
         $extension = $file->getClientOriginalExtension();
