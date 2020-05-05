@@ -1,11 +1,9 @@
 # Laravel File Manager
 
 <p align="center">
-  <a target="_blank" href="https://packagist.org/packages/mafftor/laravel-file-manager"><img src="https://poser.pugx.org/mafftor/laravel-file-manager/downloads?format=flat-square"></a>
-  <a target="_blank" href="https://packagist.org/packages/mafftor/laravel-file-manager"><img src="https://img.shields.io/packagist/dm/mafftor/laravel-file-manager.svg?style=flat-square"></a>
-  <a target="_blank" href="https://github.com/mafftor/laravel-file-manager/issues"><img src="https://img.shields.io/github/issues/mafftor/laravel-file-manager?style=flat-square"></a>
-  <a target="_blank" href="https://github.com/mafftor/laravel-file-manager/releases"><img src="https://poser.pugx.org/mafftor/laravel-file-manager/v/stable?format=flat-square"></a>
-  <a target="_blank" href="https://github.com/mafftor/laravel-file-manager/blob/master/LICENSE"><img src="https://poser.pugx.org/mafftor/laravel-file-manager/license?format=flat-square"></a>
+  <a target="_blank" href="https://packagist.org/packages/mafftor/laravel-file-manager"><img src="https://img.shields.io/packagist/dt/mafftor/laravel-file-manager.svg?style=flat-square"></a>
+  <a target="_blank" href="https://github.com/mafftor/laravel-file-manager/releases"><img src="https://img.shields.io/packagist/v/mafftor/laravel-file-manager.svg?style=flat-square"></a>
+  <a target="_blank" href="https://github.com/mafftor/laravel-file-manager/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mafftor/laravel-file-manager?style=flat-square"></a>
 </p>
 
 <p align="center">
@@ -40,15 +38,8 @@
 * Code and increased test coverage.
 
 ## How Does It look like?
+
 ![RWD demo](https://unisharp.github.io/laravel-filemanager/images/screenshots-v2.png)
-
-## TODO:
-* [ ] Rewrite front to (React, Vue, Angular).
-* [ ] Redesign.
-* [ ] Docs.
-* [ ] Code's refactoring and improvements.
-
-## Contributors & Credits
 
 ### Developers / Maintainers
 
@@ -71,3 +62,7 @@
  * SVG Loaders by [Sam](http://samherbert.net/svg-loaders/) (Licensed MIT)
  * Articles and videos which helped promoting this package.
  * All users and you <3
+
+### License
+
+The Laravel File Manager is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
