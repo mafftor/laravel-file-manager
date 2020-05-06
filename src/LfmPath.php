@@ -256,7 +256,7 @@ class LfmPath
         // TODO should be "FileWasUploaded"
         event(new ImageWasUploaded($new_file_path));
 
-        return $new_file_name;
+        return $this->pretty($new_file_name)->fill()->attributes;
     }
 
     private function uploadValidator($file)

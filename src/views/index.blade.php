@@ -234,19 +234,14 @@
       paramName: "upload[]", // The name that will be used to transfer the file
       uploadMultiple: false,
       parallelUploads: 5,
-      timeout:0,
+      timeout: 0,
       clickable: '#upload-button',
       dictDefaultMessage: lang['message-drop'],
-      init: function() {
-        var _this = this; // For the closure
-        this.on('success', function(file, response) {
-          if (response === 'OK') {
-            loadFolders();
-          } else {
-            this.defaultOptions.error(file, response.join('\n'));
-          }
+      init: function () {
+        this.on('success', function (file, response) {
+          loadFolders();
         });
-        this.on('error', function(file, response) {
+        this.on('error', function (file, response) {
           if (response.message !== undefined) {
             this.defaultOptions.error(file, response.message);
           }
