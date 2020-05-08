@@ -54,7 +54,7 @@ class ItemsController extends LfmController
 
         foreach ($items as $item) {
             $old_file = $this->lfm->pretty($item);
-            $is_directory = $old_file->isDirectory();
+            $is_directory = $old_file->getLfm()->isDirectory();
 
             if ($old_file->hasThumb()) {
                 $new_file = $this->lfm->setName($item)->thumb()->dir($target);

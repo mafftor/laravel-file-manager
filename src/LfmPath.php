@@ -111,11 +111,12 @@ class LfmPath
     {
         $all_folders = $this->storage->directories();
         if ($this->helper->input('search')) {
-            $all_folders = preg_grep('/' . preg_quote($this->helper->input('search'), '/') . '[^\/]*$/iu', $all_folders);
+            $search = preg_quote($this->helper->input('search'), '/');
+            $all_folders = preg_grep('/' . $search . '[^\/]*$/iu', $all_folders);
         }
 
         $all_folders = array_map(function ($directory_path) {
-            return $this->pretty($directory_path);
+            return $this->pretty($directory_path, true);
         }, $all_folders);
 
         $folders = array_filter($all_folders, function ($directory) {
@@ -139,12 +140,13 @@ class LfmPath
         return $this->sortByColumn($files);
     }
 
-    public function pretty($item_path)
+    public function pretty($item_path, bool $isDirectory = false)
     {
         return Container::getInstance()->makeWith(LfmItem::class, [
             'lfm' => (clone $this)->setName($this->helper->getNameFromPath($item_path))
                 ->setFileName($this->helper->getNameFromPath($item_path, PATHINFO_FILENAME)),
-            'helper' => $this->helper
+            'helper' => $this->helper,
+            'isDirectory' => $isDirectory,
         ]);
     }
 

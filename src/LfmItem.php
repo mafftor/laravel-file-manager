@@ -10,6 +10,9 @@ class LfmItem
     private $lfm;
     private $helper;
 
+    private $isDirectory;
+    private $mimeType;
+
     private $columns = [
         'name',
         'file_name',
@@ -25,10 +28,11 @@ class LfmItem
 
     public $attributes = [];
 
-    public function __construct(LfmPath $lfm, Lfm $helper)
+    public function __construct(LfmPath $lfm, Lfm $helper, $isDirectory = false)
     {
         $this->lfm = $lfm->thumb(false);
         $this->helper = $helper;
+        $this->isDirectory = $isDirectory;
     }
 
     public function __get($var_name)
@@ -67,7 +71,7 @@ class LfmItem
 
     public function isDirectory()
     {
-        return $this->lfm->isDirectory();
+        return $this->isDirectory;
     }
 
     public function isFile()
@@ -82,11 +86,7 @@ class LfmItem
      */
     public function isImage()
     {
-        if (!$this->isDirectory()) {
-            return Str::startsWith($this->mimeType(), 'image');
-        }
-
-        return false;
+        return Str::startsWith($this->mimeType(), 'image');
     }
 
     /**
@@ -108,14 +108,13 @@ class LfmItem
      *
      * @return string
      */
-    // TODO: uploaded file
     public function mimeType()
     {
-        // if ($file instanceof UploadedFile) {
-        //     return $file->getMimeType();
-        // }
+        if (is_null($this->mimeType)) {
+            $this->mimeType = $this->lfm->mimeType();
+        }
 
-        return $this->lfm->mimeType();
+        return $this->mimeType;
     }
 
     public function extension()
@@ -250,6 +249,11 @@ class LfmItem
     public function get()
     {
         return $this->lfm->get();
+    }
+
+    public function getLfm()
+    {
+        return $this->lfm;
     }
 
     /**
