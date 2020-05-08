@@ -1,4 +1,4 @@
-var lfm_route = location.origin + location.pathname;
+var lfm_route = (location.origin + location.pathname).replace(/\/*$/, '');
 var show_list = window.localStorage.getItem('show_list');
 var sort_type = 'alphabetic';
 var items = [];
