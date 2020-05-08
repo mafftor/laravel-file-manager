@@ -13,9 +13,28 @@ return [
     |--------------------------------------------------------------------------
     | Routing
     |--------------------------------------------------------------------------
-     */
+    |
+    | If you want to define your own routes, please set 'use_package_routes'
+    | to false! Or change 'route.attributes' for your needs.
+    |
+    | Note, You always can check active routes and be sure that you have not
+    | defined routes several times.
+    | run for checking => 'php artisan route:list'
+    |
+    */
 
-    'use_package_routes' => true,
+    'route' => [
+        'use_package_routes' => true,
+
+        'attributes' => [
+            'prefix' => 'filemanager',
+            'middleware' => [
+                'web',
+                'auth',
+            ],
+        ],
+    ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -24,7 +43,7 @@ return [
     |
     | If both options are set to false, then shared folder will be activated.
     |
-     */
+    */
 
     'allow_private_folder' => true,
 
@@ -43,7 +62,7 @@ return [
     |--------------------------------------------------------------------------
     | Folder Names
     |--------------------------------------------------------------------------
-     */
+    */
 
     'folder_categories' => [
         'file' => [
@@ -165,14 +184,17 @@ return [
     |--------------------------------------------------------------------------
     | Thumbnail
     |--------------------------------------------------------------------------
-     */
+    |
+    | If 'should_create_thumbnails' true, image thumbnails would be created
+    | during upload
+    | 'raster_mimetypes' - Create thumbnails automatically only for listed types
+    |
+    */
 
-    // If true, image thumbnails would be created during upload
     'should_create_thumbnails' => true,
 
     'thumb_folder_name' => 'thumbs',
 
-    // Create thumbnails automatically only for listed types.
     'raster_mimetypes' => [
         'image/jpeg',
         'image/pjpeg',
@@ -180,14 +202,13 @@ return [
     ],
 
     'thumb_img_width' => 200, // px
-
     'thumb_img_height' => 200, // px
 
     /*
     |--------------------------------------------------------------------------
     | File Extension Information
     |--------------------------------------------------------------------------
-     */
+    */
 
     'file_type_array' => [
         'pdf' => 'Adobe Acrobat',
@@ -214,7 +235,8 @@ return [
     |
     | Please note that the 'upload_max_filesize' & 'post_max_size'
     | directives are not supported.
-     */
+    */
+
     'php_ini_overrides' => [
         'memory_limit' => '256M',
     ],

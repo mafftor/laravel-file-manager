@@ -17,30 +17,28 @@ class LaravelFileManagerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__.'/lang', 'laravel-file-manager');
+        $this->loadTranslationsFrom(__DIR__ . '/lang', 'laravel-file-manager');
 
-        $this->loadViewsFrom(__DIR__.'/views', 'laravel-file-manager');
+        $this->loadViewsFrom(__DIR__ . '/views', 'laravel-file-manager');
 
         $this->publishes([
-            __DIR__ . '/config/lfm.php' => base_path('config/lfm.php'),
+            __DIR__ . '/config/lfm.php' => config_path('lfm.php'),
         ], 'lfm_config');
 
         $this->publishes([
-            __DIR__.'/../public' => public_path('vendor/laravel-file-manager'),
+            __DIR__ . '/../public' => public_path('vendor/laravel-file-manager'),
         ], 'lfm_public');
 
         $this->publishes([
-            __DIR__.'/views'  => base_path('resources/views/vendor/laravel-file-manager'),
+            __DIR__ . '/views' => base_path('resources/views/vendor/laravel-file-manager'),
         ], 'lfm_view');
 
         $this->publishes([
-            __DIR__.'/Handlers/LfmConfigHandler.php' => base_path('app/Handlers/LfmConfigHandler.php'),
+            __DIR__ . '/Handlers/LfmConfigHandler.php' => base_path('app/Handlers/LfmConfigHandler.php'),
         ], 'lfm_handler');
 
-        if (config('lfm.use_package_routes')) {
-            Route::group(['prefix' => 'filemanager', 'middleware' => ['web', 'auth']], function () {
-                \Mafftor\LaravelFileManager\Lfm::routes();
-            });
+        if (config('lfm.route.use_package_routes')) {
+            $this->registerRoutes();
         }
     }
 
@@ -51,8 +49,27 @@ class LaravelFileManagerServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // merge default config
+        $this->mergeConfigFrom(
+            __DIR__ . '/config/lfm.php',
+            'lfm'
+        );
+
         $this->app->singleton('laravel-file-manager', function () {
             return true;
+        });
+    }
+
+    /**
+     * Register the application routes.
+     *
+     * @return void
+     */
+    public function registerRoutes()
+    {
+        $attributes = config('lfm.route.attributes');
+        Route::group($attributes, function () {
+            \Mafftor\LaravelFileManager\Lfm::routes();
         });
     }
 }
