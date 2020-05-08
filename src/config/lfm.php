@@ -65,15 +65,6 @@ return [
     */
 
     'folder_categories' => [
-        'file' => [
-            'folder_name' => 'files',
-            'startup_view' => 'grid',
-            'max_size' => 50000, // size in KB
-            'valid_mime' => [
-                'application/pdf',
-                'text/plain',
-            ],
-        ],
         'image' => [
             'folder_name' => 'photos',
             'startup_view' => 'list',
@@ -84,6 +75,15 @@ return [
                 'image/png',
                 'image/gif',
                 'image/svg+xml',
+            ],
+        ],
+        'file' => [
+            'folder_name' => 'files',
+            'startup_view' => 'grid',
+            'max_size' => 50000, // size in KB
+            'valid_mime' => [
+                'application/pdf',
+                'text/plain',
             ],
         ],
     ],
@@ -103,7 +103,7 @@ return [
     |
     */
 
-    'default_category_type' => 'file',
+    'default_category_type' => 'image',
 
     /*
     |--------------------------------------------------------------------------
