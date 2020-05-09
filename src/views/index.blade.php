@@ -238,7 +238,7 @@
       clickable: '#upload-button',
       dictDefaultMessage: lang['message-drop'],
       init: function () {
-        this.on('success', function (file, response) {
+        this.on('queuecomplete', function () {
           loadFolders();
         });
         this.on('error', function (file, response) {
