@@ -11,7 +11,7 @@ return [
     'menu-rename'       => 'Переименовать',
     'menu-delete'       => 'Удалить',
     'menu-view'         => 'Просмотр',
-    'menu-download'     => 'Загрузить',
+    'menu-download'     => 'Скачать',
     'menu-resize'       => 'Изменить размер',
     'menu-crop'         => 'Обрезать',
     'menu-move'         => 'Переместить',
