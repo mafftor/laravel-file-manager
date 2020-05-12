@@ -321,9 +321,9 @@ class LfmPath
     {
         $this->setName($new_file_name)->storage->save($file);
 
-        $this->makeThumbnail($new_file_name);
-
         $this->compressImage($new_file_name);
+
+        $this->makeThumbnail($new_file_name);
 
         return $new_file_name;
     }
