@@ -105,6 +105,7 @@ $(document).ready(function () {
     });
 
   $(window).on('dragenter', function(){
+    $('.dropzone')[0].dropzone.removeAllFiles();
     $('#uploadModal').modal('show');
   });
 });
@@ -157,6 +158,7 @@ $(document).on('click', '#add-folder', function () {
 });
 
 $(document).on('click', '#upload', function () {
+  $('.dropzone')[0].dropzone.removeAllFiles();
   $('#uploadModal').modal('show');
 });
 
