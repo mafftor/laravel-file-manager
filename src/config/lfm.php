@@ -169,12 +169,14 @@ return [
     | Compressing
     |--------------------------------------------------------------------------
     |
-    | This is value of your compressing of images, set up integer degree
-    | from 0 to 100 where 0 is min and 100 is max quality of image.
-    | Do not set value below then 50, it can broke your image quality!
+    | Define the quality of the image. Data ranging from 0
+    | (poor quality, small file) to 100 (best quality, big file).
+    | Quality is only applied if you're encoding JPG format
+    | since PNG compression is lossless and does not affect image quality.
     |
-    | Recommended => 80-90
-    | To disable => false
+    | Default: 90
+    | Recommended: 80-90
+    | Disable: false
     |
     */
 
