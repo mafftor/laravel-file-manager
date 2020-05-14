@@ -250,9 +250,9 @@ a {
 
 .list .square {
   margin-right: 1rem;
-  width: 70px;
-  height: 70px;
-  flex: 0 0 70px;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
 }
 
 .square > div {
