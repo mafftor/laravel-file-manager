@@ -2,9 +2,12 @@
 
 namespace Mafftor\LaravelFileManager;
 
+use Exception;
 use Illuminate\Container\Container;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
+use Log;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Mafftor\LaravelFileManager\Events\ImageIsUploading;
 use Mafftor\LaravelFileManager\Events\ImageWasUploaded;
@@ -244,15 +247,18 @@ class LfmPath
     // Upload section
     public function upload($file)
     {
-        $this->uploadValidator($file);
+        if (true !== $errors = $this->uploadValidator($file)) {
+            return $errors;
+        }
+
         $new_file_name = $this->getNewName($file);
         $new_file_path = $this->setName($new_file_name)->path('absolute');
 
         event(new ImageIsUploading($new_file_path));
         try {
             $new_file_name = $this->saveFile($file, $new_file_name);
-        } catch (\Exception $e) {
-            \Log::info($e);
+        } catch (Exception $e) {
+            Log::info($e);
             return $this->error('invalid');
         }
         // TODO should be "FileWasUploaded"
@@ -261,6 +267,13 @@ class LfmPath
         return $this->pretty($new_file_name)->fill()->attributes;
     }
 
+    /**
+     * Validate file upload
+     *
+     * @param $file
+     * @return bool|JsonResponse
+     * @throws Exception
+     */
     private function uploadValidator($file)
     {
         if (empty($file)) {
@@ -270,7 +283,7 @@ class LfmPath
         } elseif ($file->getError() == UPLOAD_ERR_INI_SIZE) {
             return $this->error('file-size', ['max' => ini_get('upload_max_filesize')]);
         } elseif ($file->getError() != UPLOAD_ERR_OK) {
-            throw new \Exception('File failed to upload. Error code: ' . $file->getError());
+            throw new Exception('File failed to upload. Error code: ' . $file->getError());
         }
 
         $new_file_name = $this->getNewName($file);
@@ -294,7 +307,7 @@ class LfmPath
             }
         }
 
-        return 'pass';
+        return true;
     }
 
     private function getNewName($file)
