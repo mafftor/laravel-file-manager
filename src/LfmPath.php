@@ -288,7 +288,7 @@ class LfmPath
 
         $new_file_name = $this->getNewName($file);
 
-        if ($this->setName($new_file_name)->exists() && !config('lfm.over_write_on_duplicate', false)) {
+        if ($this->setName($new_file_name)->exists() && config('lfm.rename_file.duplicate', '-%s') === false) {
             return $this->error('file-exist');
         }
 
@@ -310,24 +310,54 @@ class LfmPath
         return true;
     }
 
-    private function getNewName($file)
+    /**
+     * Generate new name for file
+     *
+     * @param UploadedFile $file
+     * @return string
+     */
+    private function getNewName($file): string
     {
-        $new_file_name = $this->helper
-            ->translateFromUtf8(trim(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)));
+        $name = $this->helper->translateFromUtf8(trim(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)));
 
         if (config('lfm.rename_file.uniqid', false) === true) {
-            $new_file_name = uniqid();
+            $name = uniqid();
         } elseif (config('lfm.rename_file.slug', true) === true) {
-            $new_file_name = Str::slug($new_file_name);
+            $name = Str::slug($name);
         }
 
-        $extension = $file->getClientOriginalExtension();
+        return $this->uniquifyName($name, $file->getClientOriginalExtension());
+    }
 
-        if ($extension) {
-            $new_file_name .= '.' . $extension;
-        }
 
-        return $new_file_name;
+    /**
+     * Generate unique name for file if it necessary
+     *
+     * @param string $name
+     * @param string $extension
+     * @return string
+     */
+    private function uniquifyName(string $name, string $extension): string
+    {
+        $duplicate = config('lfm.rename_file.duplicate', '-%s');
+        $i = 0;
+
+        do {
+            $result = $name;
+
+            if ($i && is_string($duplicate)) {
+                $result .= sprintf($duplicate, $i);
+            }
+
+            // Append the extension if it exists
+            if ($extension) {
+                $result .= '.' . $extension;
+            }
+
+            $i++;
+        } while (is_string($duplicate) ? $this->setName($result)->exists() : false);
+
+        return $result;
     }
 
     private function saveFile($file, $new_file_name)

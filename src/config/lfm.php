@@ -38,14 +38,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Shared folder / Private folder
+    | Folder privacy
     |--------------------------------------------------------------------------
     |
     | If both options are set to false, then shared folder will be activated.
     |
     */
 
-    'allow_private_folder' => true,
+    'allow_private_folder' => false,
 
     // Flexible way to customize client folders accessibility
     // If you want to customize client folders, publish tag="lfm_handler"
@@ -123,7 +123,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Upload / Validation
+    | Upload and Validation
     |--------------------------------------------------------------------------
     |
     | We highly recommend you to leave alphanumeric setting by default (true)
@@ -139,34 +139,36 @@ return [
     'should_validate_size' => true,
     'should_validate_mime' => true,
 
-    // behavior on files with identical name
-    // setting it to true cause old file replace with new one
-    // setting it to false show `error-file-exist` error and stop upload
-    'over_write_on_duplicate' => false,
-
     /*
     |--------------------------------------------------------------------------
-    | File naming
+    | File naming [Upload]
     |--------------------------------------------------------------------------
     |
-    | It works only when you're uploading a new file!
+    | 'uniqid' - Generate a unique ID (length:13) (e.g. 5e94a2653ef6a)
+    | 'slug' - Generate friendly "slug" ("Te sT 1.txt" => "te-st-1.txt")
     |
-    | rename_file.uniqid - Generate a unique ID (length:13) (e.g 5e94a2653ef6a)
-    | rename_file.slug - Generate friendly "slug" ("Te sT .txt" => "te-st.txt")
+    | 'duplicate' - behavior on files with identical name
+    |   '-%s' - create new file with postfix file.txt => file-1.txt, file-2.txt
+    |     where '%s' is number '-1', '-2' will be generated automatically
+    |   true - old file will be replaced with new one
+    |   false - will show `error-file-exist` error and stop upload
     |
-    | Make sure that you have enabled only one feature of rename_file because
-    | of conflicts
+    | Note!
+    |   Make sure that you have enabled only one feature of rename_file
+    |   'uniqid' or 'slug' because of conflicts
     |
     */
 
     'rename_file' => [
         'uniqid' => false,
         'slug' => true,
+
+        'duplicate' => '-%s',
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Compressing
+    | Compression
     |--------------------------------------------------------------------------
     |
     | Define the quality of the image. Data ranging from 0
@@ -174,9 +176,8 @@ return [
     | Quality is only applied if you're encoding JPG format
     | since PNG compression is lossless and does not affect image quality.
     |
-    | Default: 90
-    | Recommended: 80-90
-    | Disable: false
+    | 90 - default value, recommended value is between 80-90
+    | false - to disable compression
     |
     */
 
