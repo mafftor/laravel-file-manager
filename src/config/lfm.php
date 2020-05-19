@@ -176,6 +176,7 @@ return [
     | Quality is only applied if you're encoding JPG format
     | since PNG compression is lossless and does not affect image quality.
     |
+    | 'APIKeyFromTinyPng.Com' - set API key to use TinyPNG.com
     | 90 - default value, recommended value is between 80-90
     | false - to disable compression
     |
