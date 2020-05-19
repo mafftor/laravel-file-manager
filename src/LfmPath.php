@@ -387,7 +387,9 @@ class LfmPath
         $image = Image::make($original_image->get())
             ->fit(config('lfm.thumb_img_width', 200), config('lfm.thumb_img_height', 200));
 
-        $this->storage->put($image->stream(null, config('lfm.compress_image', 90))->detach(), 'public');
+        $quality = is_int(config('lfm.compress_image', 90)) ? config('lfm.compress_image', 90) : 90;
+
+        $this->storage->put($image->stream(null, $quality)->detach(), 'public');
     }
 
     /**
@@ -403,8 +405,14 @@ class LfmPath
             return;
         }
 
-        $image = Image::make($original_image->get());
+        $compress_image = config('lfm.compress_image', 90);
 
-        $this->storage->put($image->stream(null, config('lfm.compress_image', 90))->detach(), 'public');
+        if (is_int($compress_image)) {
+            $image = Image::make($original_image->get());
+            $this->storage->put($image->stream(null, $compress_image)->detach(), 'public');
+        } elseif (is_string($compress_image)) {
+            \Tinify\setKey($compress_image);
+            \Tinify\fromBuffer($original_image->get())->toFile($original_image->path());
+        }
     }
 }
