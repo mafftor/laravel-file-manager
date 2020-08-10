@@ -149,7 +149,12 @@ class LfmItem
     public function dimensions()
     {
         if ($this->isImage() && !$this->isSvg()) {
-            list($width, $height) = getimagesizefromstring($this->get());
+            try {
+                list($width, $height) = getimagesizefromstring($this->get());
+            } catch (\ErrorException $e){
+                return false;
+            }
+            
             return $width . 'x' . $height;
         }
 
