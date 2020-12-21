@@ -13,7 +13,7 @@ class DownloadController extends LfmController
 
         try {
             if (Storage::disk($this->helper->config('disk'))->exists($filepath)) {
-                return response()->download($this->lfm->setName(request('file'))->path('absolute'));
+                return Storage::disk($this->helper->config('disk'))->download($filepath);
             }
         } catch (\Exception $e) {
             // Do not need to throw the exception
