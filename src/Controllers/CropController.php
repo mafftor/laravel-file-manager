@@ -24,17 +24,14 @@ class CropController extends LfmController
 
     /**
      * Crop the image (called via ajax).
+     *
+     * @param bool $overWrite
      */
     public function getCropimage($overWrite = true)
     {
         $image_name = request('img');
+        $target_name = $image_name;
         $image_path = $this->lfm->setName($image_name)->path('absolute');
-
-        if (! $overWrite) {
-            $fileParts = explode('.', $image_name);
-            $fileParts[count($fileParts) - 2] = $fileParts[count($fileParts) - 2] . '_cropped_' . time();
-            $crop_name = implode('.', $fileParts);
-        }
 
         event(new ImageIsCropping($image_path));
 
@@ -46,19 +43,24 @@ class CropController extends LfmController
             ->stream()
             ->detach();
 
-        if (! $overWrite) {
-            $this->lfm->setName($crop_name)->storage->put($croppedImage);
-            // make new thumbnail
-            $this->lfm->makeThumbnail($crop_name);
-        } else {
-            $this->lfm->setName($image_name)->storage->put($croppedImage);
-            // make new thumbnail
-            $this->lfm->makeThumbnail($image_name);
+        // Overwrite
+        if (!$overWrite) {
+            $fileParts = explode('.', $image_name);
+            $fileParts[count($fileParts) - 2] = $fileParts[count($fileParts) - 2] . '_cropped_' . time();
+            $target_name = implode('.', $fileParts);
         }
+
+        // Replace or create new image
+        $this->lfm->setName($target_name)->storage->put($croppedImage, 'public');
+        // make new thumbnail
+        $this->lfm->makeThumbnail($target_name);
 
         event(new ImageWasCropped($image_path));
     }
 
+    /**
+     * Crop the image (called via ajax).
+     */
     public function getNewCropimage()
     {
         $this->getCropimage(false);

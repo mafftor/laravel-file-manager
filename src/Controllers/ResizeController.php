@@ -9,7 +9,7 @@ use Mafftor\LaravelFileManager\Events\ImageWasResized;
 class ResizeController extends LfmController
 {
     /**
-     * Dipsplay image for resizing.
+     * Display image for resizing.
      *
      * @return mixed
      */
@@ -52,14 +52,25 @@ class ResizeController extends LfmController
             ->with('ratio', $ratio);
     }
 
+    /**
+     * Perform resize
+     *
+     * @return string
+     */
     public function performResize()
     {
         $image_name = request('img');
         $image_path = $this->lfm->setName($image_name)->path('absolute');
 
         event(new ImageIsResizing($image_path));
-        $resizedImage = Image::make($this->lfm->setName($image_name)->storage->get())->resize(request('dataWidth'), request('dataHeight'))->stream()->detach();
-        $this->lfm->setName($image_name)->storage->put($resizedImage);
+
+        $image = $this->lfm->setName($image_name)->storage->get();
+        $resizedImage = Image::make($image)->resize(request('dataWidth'), request('dataHeight'))
+            ->stream()
+            ->detach();
+
+        // Same new image
+        $this->lfm->setName($image_name)->storage->put($resizedImage, 'public');
         // make new thumbnail
         $this->lfm->makeThumbnail($image_name);
 
