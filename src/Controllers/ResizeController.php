@@ -16,9 +16,9 @@ class ResizeController extends LfmController
     public function getResize()
     {
         $ratio = 1.0;
-        $image = request('img');
+        $image_name = request('img');
 
-        $original_image = Image::make($this->lfm->setName($image)->path('absolute'));
+        $original_image = Image::make($this->lfm->setName($image_name)->storage->get());
         $original_width = $original_image->width();
         $original_height = $original_image->height();
 
@@ -43,7 +43,7 @@ class ResizeController extends LfmController
         }
 
         return view('laravel-file-manager::resize')
-            ->with('img', $this->lfm->pretty($image))
+            ->with('img', $this->lfm->pretty($image_name))
             ->with('height', number_format($height, 0))
             ->with('width', $width)
             ->with('original_height', $original_height)
@@ -54,10 +54,15 @@ class ResizeController extends LfmController
 
     public function performResize()
     {
-        $image_path = $this->lfm->setName(request('img'))->path('absolute');
+        $image_name = request('img');
+        $image_path = $this->lfm->setName($image_name)->path('absolute');
 
         event(new ImageIsResizing($image_path));
-        Image::make($image_path)->resize(request('dataWidth'), request('dataHeight'))->save();
+        $resizedImage = Image::make($this->lfm->setName($image_name)->storage->get())->resize(request('dataWidth'), request('dataHeight'))->stream()->detach();
+        $this->lfm->setName($image_name)->storage->put($resizedImage);
+        // make new thumbnail
+        $this->lfm->makeThumbnail($image_name);
+
         event(new ImageWasResized($image_path));
 
         return parent::$success_response;
