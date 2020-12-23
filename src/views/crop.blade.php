@@ -57,6 +57,7 @@
 
         $image = $('.crop-container > img');
         options = {
+            checkImageOrigin: false,
             aspectRatio: 16 / 9,
             preview: ".img-preview",
             strict: false,
