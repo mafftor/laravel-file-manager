@@ -209,7 +209,7 @@ class LfmPath
             $path = rtrim($path, Lfm::DS) . Lfm::DS . $this->helper->getThumbFolderName();
         }
 
-        if ($this->getName()) {
+        if ($this->getName() != '') {
             // Prevent if working dir is "/" normalizeWorkingDir will add double "//" that breaks S3 functionality
             $path = rtrim($path, Lfm::DS) . Lfm::DS . $this->getName();
         }
