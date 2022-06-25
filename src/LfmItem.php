@@ -110,7 +110,7 @@ class LfmItem
      */
     public function mimeType()
     {
-        if (is_null($this->mimeType)) {
+        if ($this->isFile() && is_null($this->mimeType)) {
             $this->mimeType = $this->lfm->mimeType();
         }
 
