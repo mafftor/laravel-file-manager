@@ -241,7 +241,7 @@ class Lfm
      *
      * @return void
      */
-    public static function routes()
+    public static function routes($options = [])
     {
         $middleware = [CreateDefaultFolder::class, MultiUser::class];
         $as = 'mafftor.lfm.';
@@ -256,10 +256,12 @@ class Lfm
             ]);
 
             // display integration error messages
-            Route::get('/errors', [
-                'uses' => 'LfmController@getErrors',
-                'as' => 'getErrors',
-            ]);
+            if ($options['errors'] ?? true) {
+                Route::get('/errors', [
+                    'uses' => 'LfmController@getErrors',
+                    'as' => 'getErrors',
+                ]);
+            }
 
             // upload
             Route::any('/upload', [
@@ -343,7 +345,9 @@ class Lfm
                 'as' => 'getDelete',
             ]);
 
-            Route::get('/demo', 'DemoController@index');
+            if ($options['demo'] ?? true) {
+                Route::get('/demo', 'DemoController@index');
+            }
         });
     }
 }
