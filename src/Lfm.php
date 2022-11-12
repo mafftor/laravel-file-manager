@@ -184,7 +184,7 @@ class Lfm
     /**
      * Translate file name to make it compatible on Windows.
      *
-     * @param array|string $input Any string.
+     * @param array|string $input
      * @return array|string
      */
     public function translateFromUtf8($input)
