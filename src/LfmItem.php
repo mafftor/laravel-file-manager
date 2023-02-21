@@ -138,7 +138,11 @@ class LfmItem
 
     public function time()
     {
-        return $this->lfm->lastModified();
+        try {
+            return $this->lfm->lastModified();
+        } catch (\Exception $e) {
+            return null;
+        }
     }
 
     /**
